@@ -20,7 +20,7 @@
 - Documenter l'installation (fichier PDF ou Markdown pour le portfolio)
 
 **📌 Livrable :**
-> Création d’un lab de cybersécurité local sécurisé
+> Création d’un lab local de cybersécurité prêt pour les tests d’exploitation, l’analyse réseau et la détection d’intrusions.
 
 ---
 
