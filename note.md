@@ -1,5 +1,6 @@
 # Tuto de création du Labo Cyber
 
+
 ## Prérequis
 Tout d'abord, il y a trois installations à faire :
 - Avoir VirtualBox
@@ -7,12 +8,13 @@ Tout d'abord, il y a trois installations à faire :
 - Avoir une Machine Virtuelle Metasploitable2 [Installation Metasploitable2](https://sourceforge.net/projects/metasploitable2/)
 
 **Pour Installer VirtualBox :**
-Il faut avoir installé le fichier **install_virtualbox.sh**
+Il faut avoir installé le fichier **install_virtualbox.sh** et lancer ces commandes dans le même répertoire (où se trouve le fichier d'installation)
 
 ```
 sudo chmod +x install_virtualbox.sh
 sudo bash install_virtualbox.sh 
 ```
+
 
 ## Configuration
 
