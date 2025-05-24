@@ -14,8 +14,8 @@
 ## 🔽 Mois 1 – Mise en place & fondamentaux
 
 ### 🗓️ Semaine 1 : Création du lab
-- Installer VirtualBox ou KVM + GUI (virt-manager)
-- Créer un réseau interne NAT ou Host-only
+- Installer VirtualBox
+- Créer un réseau interne
 - Installer Kali Linux, Metasploitable 2 et une VM Windows (évaluation)
 - Documenter l'installation (fichier PDF ou Markdown pour le portfolio)
 
