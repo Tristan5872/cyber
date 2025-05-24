@@ -7,7 +7,7 @@ Tout d'abord, il y a trois installations à faire :
 - Avoir une Machine Virtuelle Metasploitable2 [Installation Metasploitable2](https://sourceforge.net/projects/metasploitable2/)
 
 **Pour Installer VirtualBox :**
-Il faut avoir installer le fichier **install_virtualbox.sh**
+Il faut avoir installé le fichier **install_virtualbox.sh**
 
 ```
 sudo chmod +x install_virtualbox.sh
