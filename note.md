@@ -8,8 +8,11 @@ Tout d'abord, il y a trois installations à faire :
 
 **Pour Installer VirtualBox :**
 Il faut avoir installer le fichier **install_virtualbox.sh**
-| ---------------------------------------------- |
-| sudo chmod +x script.sh<br>sudo bash script.sh |
+
+```
+sudo chmod +x install_virtualbox.sh
+sudo bash install_virtualbox.sh 
+```
 
 ## Configuration
 
