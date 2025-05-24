@@ -2,11 +2,12 @@
 
 ## <span style="color:red;">Prérequis</span>
 
-Tout d'abord, il y a trois installations à faire :
+Tout d'abord, il y a ces installations à faire :
 
 - Avoir VirtualBox
-- Avoir une Machine Virtuelle Kali Linux [Installat ion Kali](https://cdimage.kali.org/kali-2025.1c/kali-linux-2025.1c-virtualbox-amd64.7z)
+- Avoir une Machine Virtuelle Kali Linux [Installation Kali](https://cdimage.kali.org/kali-2025.1c/kali-linux-2025.1c-virtualbox-amd64.7z)
 - Avoir une Machine Virtuelle Metasploitable2 [Installation Metasploitable2](https://sourceforge.net/projects/metasploitable2/)
+- Avoir une Machine Virtuelle Windows 10 Entreprise [installation Windows 10](https://info.microsoft.com/ww-landing-windows-10-enterprise.html)
 
 **Pour Installer VirtualBox :**
 Il faut avoir installé le fichier **install_virtualbox.sh** et lancer ces commandes dans le même répertoire (où se trouve le fichier d'installation)
@@ -20,17 +21,24 @@ sudo bash install_virtualbox.sh
 
 ### 1. Importer les VM dans VirtualBox
 
-- Ouvre **VirtualBox**.
-- Clique sur **Machine > Ajouter**.
-- Navigue vers le dossier où tu as téléchargé ou extrait la VM **Kali Linux** (`.ova`, `.vbox` ou `.vdi`).
-- Sélectionne la VM et valide pour l’importer.
-- Répète pour **Metasploitable2**.
+- Ouvre **VirtualBox**.  
+- Pour Kali Linux et Metasploitable2 :  
+  - Clique sur **Machine > Ajouter**.  
+  - Navigue vers le dossier où tu as téléchargé ou extrait la VM (**.ova**, **.vbox** ou **.vdi**).  
+  - Sélectionne la VM et valide pour l’importer.
+
+- Pour Windows 10 :  
+  - Clique sur **Machine > Nouvelle**.  
+  - Choisis un nom (exemple : *Windows10*), système d’exploitation : **Microsoft Windows**, version : **Windows 10 (64-bit)**.  
+  - Alloue la mémoire RAM (minimum 2 Go recommandé).  
+  - Crée un disque dur virtuel en utilisant l’ISO **Windows 10** comme source d’installation.  
+  - Configure la VM (processeur, stockage, identifiants) selon tes besoins.  
 
 ---
 
 ### 2. Configurer le réseau interne dans VirtualBox
 
-- Dans les paramètres de chaque VM (**Kali** et **Metasploitable2**) :
+- Dans les paramètres de chaque VM (**Kali**, **Metasploitable2** et **Windows 10**) :
   Onglet **Réseau** > Activer la carte réseau 1 > Mode Réseau : **Réseau interne** > Nom : **Labo1**.
 - Cette configuration isole les VM dans un réseau privé accessible uniquement par elles.
 
@@ -60,6 +68,13 @@ Pour configurer les IP statiques, il faut d'abord se connecter à chaque machine
    * **Mot de passe** : `msfadmin`
 
 3. Après t'être connecté, tu seras dans le terminal de Metasploitable2.
+
+##### Pour **Windows 10** :
+
+1. Lance la VM Windows 10 dans **VirtualBox**.
+2. Si tu utilises une ISO d'évaluation officielle de Microsoft, l'installation démarre et se déroule automatiquement (version Entreprise, sans clé).
+3. Une fois l'installation terminée, tu te retrouveras dans le bureau de Windows 10 Version Entreprise.
+
 
 ---
 
@@ -149,20 +164,64 @@ sudo service networking restart
 
 --- 
 
+##### Pour **Windows 10** :
+
+1. Démarre ta machine virtuelle **Windows 10** dans **VirtualBox**.
+
+2. Une fois connecté à la session Windows, ouvre les **Paramètres réseau** :
+   - Clique sur l’icône **Réseau** (en bas à droite de la barre des tâches).
+   - Sélectionne **Paramètres réseau et Internet**.
+
+3. Clique sur **Modifier les options d’adaptateur** (en bas de la page ou dans la section "Paramètres associés").
+
+4. Une nouvelle fenêtre s’ouvre avec les interfaces réseau. Clique-droit sur **Ethernet** (ou la carte réseau active), puis sélectionne **Propriétés**.
+
+5. Dans la liste des éléments, sélectionne **Protocole Internet version 4 (TCP/IPv4)**, puis clique sur **Propriétés**.
+
+6. Coche **Utiliser l’adresse IP suivante** et configure les paramètres suivants :
+
+   - **Adresse IP** : `10.0.10.3`  
+   - **Masque de sous-réseau** : `255.255.255.0`  
+   - **Passerelle par défaut** : `10.0.10.254`
+
+7. Clique sur **OK** pour valider, puis encore une fois sur **OK** pour fermer les propriétés de la carte réseau.
+
+8. Pour vérifier que l'adresse IP a bien été appliquée :
+   - Appuie sur `Win + R`, tape `cmd`, puis appuie sur **Entrée** pour ouvrir l'invite de commande.
+   - Tape la commande suivante :
+     ```cmd
+     ipconfig
+     ```
+   - Vérifie que la carte réseau affiche bien l’adresse IP `10.0.10.3`.
+
+---
+
 ### 3.3 Tester la connectivité entre les VM
 
-Une fois que les IP statiques sont configurées sur les deux VM, tu peux tester la connectivité entre elles en utilisant la commande `ping` :
+Une fois que les IP statiques sont configurées sur les trois VM, tu peux tester la connectivité entre elles en utilisant la commande `ping` :
 
-- Depuis Kali Linux, ping l'adresse IP de Metasploitable2 :
+---
+
+#### Depuis **Kali Linux** :
+
+- Ping Metasploitable2 :
 
 ```bash
 ping 10.0.10.2
 ```
 
-- Depuis Metasploitable2, ping l'adresse IP de Kali Linux :
+- Ping Windows10 :
 
 ```bash
-ping 10.0.10.1
+ping 10.0.10.3
 ```
 
-Si la connectivité est établie avec succès, les deux machines peuvent se communiquer via le réseau privé que tu as configuré.
+#### Depuis **Metasploitable2** :
+
+- Ping Windows10 :
+
+```bash
+ping 10.0.10.3
+```
+
+Si la connectivité est établie avec succès, les trois machines peuvent communiquer via le réseau privé que tu as configuré.
