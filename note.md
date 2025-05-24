@@ -1,7 +1,7 @@
 # Tuto de création du Labo Cyber
 
 
-## Prérequis
+## <span style="color:red;">Prérequis</span>
 Tout d'abord, il y a trois installations à faire :
 - Avoir VirtualBox
 - Avoir une Machine Virtuelle Kali Linux [Installation Kali](https://cdimage.kali.org/kali-2025.1c/kali-linux-2025.1c-virtualbox-amd64.7z)
@@ -15,31 +15,31 @@ sudo chmod +x install_virtualbox.sh
 sudo bash install_virtualbox.sh 
 ```
 
-## <red>Mise en place et Configuration</red>
+## <span style="color:red;">Mise en place et Configuration</span>
 
 ### 1. Importer les VM dans VirtualBox
 
-- Ouvre VirtualBox.
-- Clique sur **Machine > Ajouter**.
-- Navigue vers le dossier où tu as téléchargé ou extrait la VM Kali Linux (`.ova`, `.vbox` ou `.vdi`).
-- Sélectionne la VM et valide pour l’importer.
-- Répète pour Metasploitable2.
+- Ouvre **VirtualBox**.  
+- Clique sur **Machine > Ajouter**.  
+- Navigue vers le dossier où tu as téléchargé ou extrait la VM **Kali Linux** (`.ova`, `.vbox` ou `.vdi`).  
+- Sélectionne la VM et valide pour l’importer.  
+- Répète pour **Metasploitable2**.
 
 ---
 
 ### 2. Configurer le réseau interne dans VirtualBox
 
-- Crée un réseau interne nommé `Labo1` :  
-  VirtualBox > Fichier > Préférences > Réseau > Réseaux internes > Ajouter `Labo1`.
-- Dans les paramètres de chaque VM (Kali et Metasploitable2) :  
-  - Onglet Réseau > Activer la carte réseau 1 > Mode Réseau : **Réseau interne** > Nom : `Labo1`.
+- Crée un réseau interne nommé **Labo1** :  
+  VirtualBox > Fichier > Préférences > Réseau > Réseaux internes > Ajouter **Labo1**.  
+- Dans les paramètres de chaque VM (**Kali** et **Metasploitable2**) :  
+  - Onglet **Réseau** > Activer la carte réseau 1 > Mode Réseau : **Réseau interne** > Nom : **Labo1**.  
 - Cette configuration isole les VM dans un réseau privé accessible uniquement par elles.
 
 ---
 
 ### 3. Configurer les IP statiques dans les VM
 
-- Connecte-toi à chaque VM.
+- Connecte-toi à chaque VM.  
 - Modifie la configuration réseau (exemple pour Debian/Ubuntu dans `/etc/network/interfaces`) pour définir une IP statique :
 
   ```bash
