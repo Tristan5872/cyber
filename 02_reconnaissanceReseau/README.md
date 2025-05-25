@@ -33,27 +33,62 @@ Les résultats sont classés par outil dans des sous-dossiers, chacun contenant 
 
 ## Organisation des dossiers
 
+---
 - [VM_Metasploitable/](./VM_Metasploitable)
   - [01-NMAP/](./VM_Metasploitable/01-NMAP)
-    - [01-brut/](./VM_Metasploitable/01-NMAP/01-brut) ([README.md](./VM_Metasploitable/01-NMAP/01-brut/README.md))
-    - [02-rapports/](./VM_Metasploitable/01-NMAP/02-rapports) ([README.md](./VM_Metasploitable/01-NMAP/02-rapports/README.md))
-    - [03-pdf/](./VM_Metasploitable/01-NMAP/03-pdf) ([README.md](./VM_Metasploitable/01-NMAP/03-pdf/README.md))
-    - [04-Doc/](./VM_Metasploitable/01-NMAP/04-Doc) ([README.md](./VM_Metasploitable/01-NMAP/04-Doc/README.md))
-    - [05-outils/](./VM_Metasploitable/01-NMAP/05-outils) ([README.md](./VM_Metasploitable/01-NMAP/05-outils/README.md))
-    - [README.md](./VM_Metasploitable/01-NMAP/README.md)
+    - [01-brut/](./VM_Metasploitable/01-NMAP/01-brut)
+    - [02-rapports/](./VM_Metasploitable/01-NMAP/02-rapports)
+    - [03-pdf/](./VM_Metasploitable/01-NMAP/03-pdf)
+    - [04-Doc/](./VM_Metasploitable/01-NMAP/04-Doc)
+    - [05-outils/](./VM_Metasploitable/01-NMAP/05-outils)
   - [02-enum4linux/](./VM_Metasploitable/02-enum4linux)
+    - [01-brut/](./VM_Metasploitable/02-enum4linux/01-brut)
+    - [02-rapports/](./VM_Metasploitable/02-enum4linux/02-rapports)
+    - [03-pdf/](./VM_Metasploitable/02-enum4linux/03-pdf)
+    - [04-Doc/](./VM_Metasploitable/02-enum4linux/04-Doc)
+    - [05-outils/](./VM_Metasploitable/02-enum4linux/05-outils)
   - [03-whatweb/](./VM_Metasploitable/03-whatweb)
+    - [01-brut/](./VM_Metasploitable/03-whatweb/01-brut)
+    - [02-rapports/](./VM_Metasploitable/03-whatweb/02-rapports)
+    - [03-pdf/](./VM_Metasploitable/03-whatweb/03-pdf)
+    - [04-Doc/](./VM_Metasploitable/03-whatweb/04-Doc)
+    - [05-outils/](./VM_Metasploitable/03-whatweb/05-outils)
   - [04-nikto/](./VM_Metasploitable/04-nikto)
-  - [README.md](./VM_Metasploitable/README.md)
-
+    - [01-brut/](./VM_Metasploitable/04-nikto/01-brut)
+    - [02-rapports/](./VM_Metasploitable/04-nikto/02-rapports)
+    - [03-pdf/](./VM_Metasploitable/04-nikto/03-pdf)
+    - [04-Doc/](./VM_Metasploitable/04-nikto/04-Doc)
+    - [05-outils/](./VM_Metasploitable/04-nikto/05-outils)
+---
 - [VM_Windows/](./VM_Windows)
   - [01-NMAP/](./VM_Windows/01-NMAP)
+    - [01-brut/](./VM_Windows/01-NMAP/01-brut)
+    - [02-rapports/](./VM_Windows/01-NMAP/02-rapports)
+    - [03-pdf/](./VM_Windows/01-NMAP/03-pdf)
+    - [04-doc/](./VM_Windows/01-NMAP/04-doc)
+    - [05-outils/](./VM_Windows/01-NMAP/05-outils)
   - [02-enum4linux/](./VM_Windows/02-enum4linux)
+    - [01-brut/](./VM_Windows/02-enum4linux/01-brut)
+    - [02-rapports/](./VM_Windows/02-enum4linux/02-rapports)
+    - [03-pdf/](./VM_Windows/02-enum4linux/03-pdf)
+    - [04-doc/](./VM_Windows/02-enum4linux/04-doc)
+    - [05-outils/](./VM_Windows/02-enum4linux/05-outils)
   - [03-whatweb/](./VM_Windows/03-whatweb)
+    - [01-brut/](./VM_Windows/03-whatweb/01-brut)
+    - [02-rapports/](./VM_Windows/03-whatweb/02-rapports)
+    - [03-pdf/](./VM_Windows/03-whatweb/03-pdf)
+    - [04-doc/](./VM_Windows/03-whatweb/04-doc)
+    - [05-outils/](./VM_Windows/03-whatweb/05-outils)
   - [04-nikto/](./VM_Windows/04-nikto)
-  - [README.md](./VM_Windows/README.md)
-
+    - [01-brut/](./VM_Windows/04-nikto/01-brut)
+    - [02-rapports/](./VM_Windows/04-nikto/02-rapports)
+    - [03-pdf/](./VM_Windows/04-nikto/03-pdf)
+    - [04-doc/](./VM_Windows/04-nikto/04-doc)
+    - [05-outils/](./VM_Windows/04-nikto/05-outils)
+---
 ...
+
+---
 
 *D’autres VM peuvent être ajoutées ici, en suivant cette même structure*
 
