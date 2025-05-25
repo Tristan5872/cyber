@@ -2,7 +2,7 @@
 
 ## 🎯 Objectif final
 
-À la fin des 3 mois, tu auras :
+À la fin des 3 mois, j'aurais :
 - Un **lab complet**
 - Des **scripts utiles en Python/Bash**
 - Plusieurs **rapports de tests de vulnérabilité**
@@ -16,8 +16,8 @@
 ### 🗓️ Semaine 1 : Création du lab
 - Installer VirtualBox
 - Créer un réseau interne
-- Installer **Kali Linux**, **Metasploitable 2** et une VM **Windows 10** (évaluation)
-- Documenter l'installation (fichier PDF ou Markdown pour le portfolio)
+- Installer **Kali Linux** (attaquante), **Metasploitable 2** (vulnérable) et une VM **Windows 10** (simulation réelle)
+- Documenter l'installation (fichier PDF et Markdown pour le portfolio)
 
 **📌 Livrable :**
 > Création d’un lab local de cybersécurité prêt pour les tests d’exploitation, l’analyse réseau et la détection d’intrusions.
@@ -133,7 +133,7 @@
   - Capture d’écran
   - Liens vers GitHub
   - PDF des rapports
-- (Optionnel) version anglaise
+- version anglaise
 
 **📌 Livrable :**
 > Portfolio cybersécurité en ligne – version 1.0
@@ -143,16 +143,42 @@
 ### 🗓️ Semaine 12 : Projet libre ou 2e CTF
 - Refaire un CTF ou approfondir un sujet vu
 - Créer un **rapport d'analyse plus complet**
-- Corriger et relire tout ton portfolio
+- Corriger et relire tout mon portfolio
 
 **📌 Livrable :**
 > Deuxième CTF ou projet bonus : approfondissement
 
 ---
 
-## 📚 Conseils pratiques
+# 🛡️ Récapitulatif du projet cybersécurité – 3 mois
 
-- 📝 **Tenir un carnet de bord** (Notion, Obsidian ou fichier Markdown)
-- 💻 **Uploader les scripts et write-ups sur GitHub**
-- 📷 **Faire des captures d’écran propres**
-- 🧠 **Ajouter une section “Leçons apprises” à chaque projet**
+## Objectifs principaux
+- Créer un **lab virtuel** avec VirtualBox (Kali, Metasploitable, Windows)
+- Réaliser des **scans, exploits et audits**
+- Développer des **scripts Python/Bash** utiles
+- Réaliser des **write-ups de CTF**
+- Construire un **portfolio en ligne** professionnel
+
+## Compétences développées
+
+- **Virtualisation & réseaux** : gestion VM et réseau interne  
+- **Reconnaissance** : scans Nmap, Nikto, enum4linux  
+- **Exploitation** : Metasploit, reverse shells, post-exploitation  
+- **Scripting** : Python (scanner, extracteur), Bash (audit Linux)  
+- **Sécurisation** : fail2ban, iptables/nftables, audit système  
+- **Analyse réseau** : capture et décryptage Wireshark (HTTP, TCP, DNS)  
+- **Honeypot** : mise en place et analyse Cowrie SSH  
+- **CTF** : méthodologie complète et rédaction write-ups  
+- **Documentation** : rapports, README, portfolio GitHub Pages  
+
+## Outils utilisés
+
+- VirtualBox, Kali Linux, Metasploitable  
+- Nmap, Metasploit, Wireshark  
+- Python, Bash, VS Code  
+- Git, GitHub, Markdown  
+- fail2ban, iptables/nftables, Cowrie  
+
+---
+
+**Bilan :** Une base pratique solide en cybersécurité offensive/défensive, avec des livrables concrets et un portfolio prêt à valoriser mes compétences.
