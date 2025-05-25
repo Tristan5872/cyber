@@ -225,3 +225,9 @@ ping 10.0.10.3
 ```
 
 Si la connectivité est établie avec succès, les trois machines peuvent communiquer via le réseau privé que tu as configuré.
+
+## <span style="color:red;">Résultats attendus</span>
+
+### Sur VirtualBox :
+<div align="center"> <img src="Ressources/resultatVB.png">
+<i>Figure 1 : Vue de VirtualBox avec les 3 VM</i></div>
