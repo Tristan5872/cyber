@@ -10,7 +10,7 @@ Tout d'abord, il y a ces installations à faire :
 - Avoir une Machine Virtuelle Windows 10 Entreprise [installation Windows 10](https://info.microsoft.com/ww-landing-windows-10-enterprise.html)
 
 **Pour Installer VirtualBox :**
-Il faut avoir installé le fichier **install_virtualbox.sh** et lancer ces commandes dans le même répertoire (où se trouve le fichier d'installation)
+Il faut avoir installé le fichier **install_virtualbox.sh** et lancer ces commandes dans le même répertoire (où se trouve le fichier d'installation).
 *Choisir le fichier d'installation correspondant à son OS*
 
 ```
