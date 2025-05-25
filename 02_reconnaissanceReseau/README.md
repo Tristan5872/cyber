@@ -55,7 +55,7 @@ Les résultats sont classés par outil dans des sous-dossiers, chacun contenant 
 
 ...
 
-<span style="font-style: italic;"># D’autres VM peuvent être ajoutées ici, en suivant cette même structure</span>
+*D’autres VM peuvent être ajoutées ici, en suivant cette même structure*
 
 # D’autres VM peuvent être ajoutées ici, en suivant cette même structure
 
