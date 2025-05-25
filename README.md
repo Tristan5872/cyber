@@ -48,7 +48,12 @@ sudo bash install_virtualbox.sh
 
 #### 3.1. Se connecter aux Machines Virtuelles
 
-Pour configurer les IP statiques, il faut d'abord se connecter à chaque machine virtuelle (Kali Linux et Metasploitable2). Voici comment procéder pour chaque VM :
+Pour configurer les IP statiques, il faut d'abord se connecter à chaque machine virtuelle (Kali Linux, Metasploitable2 et Windows 10). Voici comment procéder pour chaque VM :
+*Chaque VM est par défaut en qwerty faire ceci pour repasser en AZERTY :*
+```bash
+sudo loadkeys fr
+```
+
 
 ##### Pour **Kali Linux** :
 
@@ -141,7 +146,7 @@ Maintenant que l'on a accès aux deux Machines Virtuelles, il suffit juste à le
    sudo nano /etc/network/interfaces
    ```
 
-3. Modifie la configuration de l'interface réseau eth0 pour lui attribuer une adresse IP statique. Assure-toi de remplacer 10.0.10.X par une adresse différente de celle que tu as attribuée à Kali (par exemple, 10.0.10.2).
+3. Modifie la configuration de l'interface réseau eth0 pour lui attribuer une adresse IP statique.
 
 Exemple de configuration :
 
@@ -152,15 +157,15 @@ iface eth0 inet static
     netmask 255.255.255.0
     gateway 10.0.10.254
 ```
-4. **Sauvegarde** et **ferme** le fichier (`Ctrl + O`, puis Enter pour sauvegarder, et `Ctrl + X` pour fermer nano).
+4. **Sauvegarde** et **ferme** le fichier (`Ctrl + Y`, puis Enter pour sauvegarder, et `Ctrl + X` pour fermer nano).
 
-5. Redémarre le service réseau pour appliquer les changements :
+5. Redémarre la machine
 
 ```bash
-sudo service networking restart
+sudo reboot
 ```
 
-6. Vérifie la configuration en utilisant la commande `ifconfig` ou `ip a` pour t'assurer que l'IP statique est bien attribuée à l'interface `eth0`.
+1. Vérifie la configuration en utilisant la commande `ip a` pour t'assurer que l'IP statique est bien attribuée à l'interface `eth0`.
 
 --- 
 
