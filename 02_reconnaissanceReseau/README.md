@@ -1,6 +1,6 @@
 # Les différents tests de reconnaissance effectués avec leur résultats
 
-Tous les résultats se trouvent dans le dossier <span style="color:red;">*resultats*</span>
+Tous les résultats se trouvent dans le dossier <a src="resultats">Resultats</a>
 
 ---
 
