@@ -16,7 +16,7 @@
 ### 🗓️ Semaine 1 : Création du lab
 - Installer VirtualBox
 - Créer un réseau interne
-- Installer Kali Linux, **Metasploitable 2** et une VM **Windows 10** (évaluation)
+- Installer **Kali Linux**, **Metasploitable 2** et une VM **Windows 10** (évaluation)
 - Documenter l'installation (fichier PDF ou Markdown pour le portfolio)
 
 **📌 Livrable :**
