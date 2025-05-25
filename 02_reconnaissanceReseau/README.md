@@ -31,30 +31,27 @@ L’objectif est d’apprendre à utiliser différents outils de scan et d’én
 
 Les résultats sont classés par outil dans des sous-dossiers, chacun contenant plusieurs sous-catégories :
 
-<span style="color:blue; font-weight:bold;">VM_Metasploitable/</span>  
-├── <span style="color:red;">01-NMAP/</span>  
-│   ├── <span style="color:green;">01-brut/</span>  
-│   │   └── <span style="color:black;">README.md</span>  
-│   ├── <span style="color:green;">02-rapports/</span>  
-│   │   └── <span style="color:black;">README.md</span>  
-│   ├── <span style="color:green;">03-pdf/</span>  
-│   │   └── <span style="color:black;">README.md</span>  
-│   ├── <span style="color:green;">04-Doc/</span>  
-│   │   └── <span style="color:black;">README.md</span>  
-│   ├── <span style="color:green;">05-outils/</span>  
-│   │   └── <span style="color:black;">README.md</span>  
-│   └── <span style="color:black;">README.md</span>  
-├── <span style="color:red;">02-enum4linux/</span>  
-├── <span style="color:red;">03-whatweb/</span>  
-├── <span style="color:red;">04-nikto/</span>  
-└── <span style="color:black;">README.md</span>  
+## Organisation des dossiers
 
-<span style="color:blue; font-weight:bold;">VM_Windows/</span>  
-├── <span style="color:red;">01-NMAP/</span>  
-├── <span style="color:red;">02-enum4linux/</span>  
-├── <span style="color:red;">03-whatweb/</span>  
-├── <span style="color:red;">04-nikto/</span>  
-└── <span style="color:black;">README.md</span>  
+- [VM_Metasploitable/](./VM_Metasploitable)
+  - [01-NMAP/](./VM_Metasploitable/01-NMAP)
+    - [01-brut/](./VM_Metasploitable/01-NMAP/01-brut) ([README.md](./VM_Metasploitable/01-NMAP/01-brut/README.md))
+    - [02-rapports/](./VM_Metasploitable/01-NMAP/02-rapports) ([README.md](./VM_Metasploitable/01-NMAP/02-rapports/README.md))
+    - [03-pdf/](./VM_Metasploitable/01-NMAP/03-pdf) ([README.md](./VM_Metasploitable/01-NMAP/03-pdf/README.md))
+    - [04-Doc/](./VM_Metasploitable/01-NMAP/04-Doc) ([README.md](./VM_Metasploitable/01-NMAP/04-Doc/README.md))
+    - [05-outils/](./VM_Metasploitable/01-NMAP/05-outils) ([README.md](./VM_Metasploitable/01-NMAP/05-outils/README.md))
+    - [README.md](./VM_Metasploitable/01-NMAP/README.md)
+  - [02-enum4linux/](./VM_Metasploitable/02-enum4linux)
+  - [03-whatweb/](./VM_Metasploitable/03-whatweb)
+  - [04-nikto/](./VM_Metasploitable/04-nikto)
+  - [README.md](./VM_Metasploitable/README.md)
+
+- [VM_Windows/](./VM_Windows)
+  - [01-NMAP/](./VM_Windows/01-NMAP)
+  - [02-enum4linux/](./VM_Windows/02-enum4linux)
+  - [03-whatweb/](./VM_Windows/03-whatweb)
+  - [04-nikto/](./VM_Windows/04-nikto)
+  - [README.md](./VM_Windows/README.md)
 
 ...
 
