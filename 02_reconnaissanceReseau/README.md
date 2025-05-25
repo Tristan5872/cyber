@@ -86,11 +86,12 @@ Les résultats sont classés par outil dans des sous-dossiers, chacun contenant 
     - [04-doc/](./VM_Windows/04-nikto/04-doc)
     - [05-outils/](./VM_Windows/04-nikto/05-outils)
 ---
-...
+
+*D’autres VM peuvent être ajoutées ici, en suivant cette même structure*
 
 ---
 
-*D’autres VM peuvent être ajoutées ici, en suivant cette même structure*
+
 
 # D’autres VM peuvent être ajoutées ici, en suivant cette même structure
 
