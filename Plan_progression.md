@@ -16,7 +16,7 @@
 ### 🗓️ Semaine 1 : Création du lab
 - Installer VirtualBox
 - Créer un réseau interne
-- Installer Kali Linux, Metasploitable 2 et une VM Windows (évaluation)
+- Installer Kali Linux, **Metasploitable 2** et une VM **Windows 10** (évaluation)
 - Documenter l'installation (fichier PDF ou Markdown pour le portfolio)
 
 **📌 Livrable :**
@@ -26,11 +26,11 @@
 
 ### 🗓️ Semaine 2 : Reconnaissance réseau
 - Utilisation de Nmap : scans TCP, UDP, OS detection
-- Utiliser `enum4linux`, `whatweb`, `nikto` sur Metasploitable
+- Utiliser `enum4linux`, `whatweb`, `nikto` sur **Metasploitable**
 - Écriture d’un petit rapport de scan
 
 **📌 Livrable :**
-> Audit réseau de Metasploitable avec Nmap, Nikto, Enum4linux
+> Audit réseau de **Metasploitable** et **Windows 10** avec Nmap, Nikto, Enum4linux
 
 ---
 
@@ -74,7 +74,7 @@
 - Comparer avec `Lynis`
 
 **📌 Livrable :**
-> Audit de sécurité d’un système Fedora avec script personnalisé
+> Audit de sécurité d’un système Linux avec script personnalisé
 
 ---
 
