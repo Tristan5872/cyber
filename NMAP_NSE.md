@@ -128,6 +128,8 @@ Pour aller plus loin, tu peux utiliser des fonctions Nmap comme nmap.new_socket(
 
 - Analyser les résultats avant d’enchaîner avec des scans plus lourds.
 
+---
+
 ## 3. Intégration du NSE dans un workflow automatisé (bash/python)
 
 Exemple simple de script bash qui enchaîne un scan SYN et un scan vulnérabilité avec NSE :
@@ -135,7 +137,7 @@ Exemple simple de script bash qui enchaîne un scan SYN et un scan vulnérabilit
 ```bash
 #!/bin/bash
 
-TARGET="10.0.2.15"
+TARGET="10.0.10.2"
 
 echo "Scan SYN TCP"
 sudo nmap -sS -Pn -oN syn_scan.txt $TARGET
@@ -150,14 +152,17 @@ En Python, tu peux lancer Nmap via un sous-processus (subprocess) ou utiliser un
 import nmap
 
 nm = nmap.PortScanner()
-nm.scan('10.0.2.15', arguments='-sS -Pn')
+nm.scan('10.0.10.2', arguments='-sS -Pn')
 print(nm.csv())
 
-nm.scan('10.0.2.15', arguments='--script vuln -Pn')
+nm.scan('10.0.10.2', arguments='--script vuln -Pn')
 print(nm.csv())
 ```
 
 Cela permet d’intégrer Nmap dans des outils plus larges (analyse, reporting, alerting).
+
+---
+
 ## 4. Ressources et documentation pour aller plus loin
 
 - Documentation officielle Nmap NSE : https://nmap.org/book/nse.html

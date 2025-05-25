@@ -87,17 +87,27 @@
 sudo nmap -sS -Pn -T4 10.0.2.15
 ```
 
-- T0 = très lent et discret, T5 = très rapide mais bruyant + risque de perte de données
+- **À quoi ça sert ?**
+   Cette option règle la vitesse du scan.
 
-- Justification : T4 est un bon compromis vitesse/précision sur un réseau local
+  - `T0` = très lent, très discret (pratique si tu veux rester invisible, mais ça prend beaucoup de temps)
+
+  - `T5` = très rapide, mais ça fait du bruit sur le réseau (tu risques d’être détecté et même de perdre des paquets)
+
+- **Pourquoi utiliser `-T4` ?**
+   C’est un bon compromis : rapide sans trop faire de bruit, surtout sur un réseau local.
 
 ## `--reason`
 
 ```bash
 sudo nmap -sS -Pn --reason 10.0.2.15
 ```
-- Explique la raison pour laquelle il pense qu’un port est dans un certain état (open, closed, filtered, etc.).
-- Justification : utile pour comprendre la logique de Nmap
+- **À quoi ça sert ?**
+   Cette option indique pourquoi Nmap a classé un port comme ouvert, fermé ou filtré.
+   - Exemple : "Port 80 ouvert parce que Nmap a reçu un paquet SYN/ACK"
+
+- **Pourquoi c’est utile ?**
+Ça t’aide à comprendre la logique derrière le résultat, surtout si tu veux analyser ou vérifier le scan.
 
 ## `-v, -vv, -d, -dd`
 
@@ -105,11 +115,15 @@ sudo nmap -sS -Pn --reason 10.0.2.15
 sudo nmap -sS -Pn -v -d 10.0.2.15
 ```
 
-- -v, -vv : niveaux de verbosité
+- **À quoi ça sert ?**
+   Ce sont des niveaux d’information que Nmap affiche pendant le scan :
 
-- -d, -dd : niveau de debug
+   - `-v` ou `-vv` = verbosité : plus il y a de v, plus Nmap détaille ce qu’il fait
 
-- Justification : pour analyser les comportements anormaux ou les blocages
+   - `-d` ou `-dd` = debug : montre encore plus de détails techniques (utile si ça bloque ou plante)
+
+- **Pourquoi c’est utile ?**
+   Pour surveiller ce qui se passe en temps réel, comprendre des erreurs, ou analyser un comportement étrange.
 
 ## `-A`
 
@@ -117,11 +131,22 @@ sudo nmap -sS -Pn -v -d 10.0.2.15
 sudo nmap -A -Pn 10.0.2.15
 ```
 
-- Combine : -sC, -sV, -O, --traceroute
+- **À quoi ça sert ?**
+   C’est un scan complet qui combine plusieurs options :
 
-- Justification : reconnaissance complète rapide
+   - `-sC` : lance des scripts de reconnaissance simples
 
-- ⚠️ **Attention** : bruyant, à éviter sur des cibles sensibles
+   - `-sV` : détecte les versions des services
+
+   - `-O` : détecte le système d’exploitation
+
+   - `--traceroute` : trace le chemin réseau vers la cible
+
+- **Pourquoi c’est utile ?**
+   Pour faire une reconnaissance approfondie rapide, et avoir un maximum d’informations sur la cible.
+
+- **Attention !**
+   Ce scan est bruyant, donc il peut être détecté facilement. À éviter sur des systèmes sensibles ou en production.
 
 ## `-oX, -oG, -oA`
 
@@ -129,11 +154,17 @@ sudo nmap -A -Pn 10.0.2.15
 sudo nmap -sS -Pn -oA scan_result 10.0.2.15
 ```
 
-- -oX : XML
+- **À quoi ça sert ?**
+   Ces options permettent d’enregistrer les résultats du scan dans des fichiers, pour les analyser plus tard :
 
-- -oG : Grepable
+   - `-oX` : format XML (utile pour des outils qui lisent ce format)
 
-- -oA : Tous les formats (.nmap, .xml, .gnmap)
+   - `-oG` : format "grepable" (texte simple, facile à filtrer avec grep)
+
+   - `-oA` : enregistre dans tous les formats d’un coup (.nmap, .xml, .gnmap)
+
+- **Pourquoi c’est utile ?**
+   Pour garder une trace des scans, faire des rapports, ou automatiser des analyses.
 
 ## `-iL`
 
@@ -141,7 +172,11 @@ sudo nmap -sS -Pn -oA scan_result 10.0.2.15
 sudo nmap -sS -Pn -iL targets.txt -oA multi_scan
 ```
 
-- Permet de scanner plusieurs cibles définies dans un fichier
+- **À quoi ça sert ?**
+   Permet de scanner plusieurs adresses IP ou hôtes listés dans un fichier texte (targets.txt).
+
+- **Pourquoi c’est utile ?**
+   Quand tu dois scanner beaucoup de cibles, tu évites de taper chaque IP manuellement.
 
 # <u>Bonnes pratiques après les scans</u>
 
@@ -151,11 +186,32 @@ sudo nmap -sS -Pn -iL targets.txt -oA multi_scan
 rm -f *.xml *.nmap *.gnmap *.txt
 ```
 
-- Évite l’encombrement avec des fichiers temporaires
+- **Pourquoi ?**
+Après un ou plusieurs scans, Nmap peut créer beaucoup de fichiers (résultats en XML, en texte, etc.).
+Ces fichiers peuvent vite s’accumuler et encombrer ton dossier de travail.
+
+- **Ce que fait cette commande**
+Elle supprime tous les fichiers qui ont ces extensions (fichiers de résultats Nmap et fichiers texte), pour garder ton espace propre.
+
+- **Important**
+Fais attention à ne pas supprimer des fichiers importants par erreur. Si tu veux garder certains résultats, déplace-les avant de lancer cette commande.
 
 ## Organisation
 
-- Regrouper les scans par dossier : reconnaissance/, vulnérabilités/, etc.
+- **Pourquoi organiser ?**
+   Quand tu fais beaucoup de scans différents (reconnaissance, détection de vulnérabilités, audits, etc.), ça devient difficile de retrouver les résultats.
+
+- **Conseil**
+   Crée des dossiers avec des noms clairs pour chaque type de scan :
+
+   - reconnaissance/ pour les scans de découverte réseau
+
+   - vulnerabilites/ pour les scans de failles de sécurité
+
+   - etc.
+
+- **Avantage**
+Ça facilite la gestion, la consultation, et le partage des résultats.
 
 ---
 
