@@ -38,51 +38,51 @@ Les résultats sont classés par outil dans des sous-dossiers, chacun contenant 
   - [01-NMAP/](./VM_Metasploitable/01-NMAP)
     - [01-brut/](./VM_Metasploitable/01-NMAP/01-brut)
     - [02-rapports/](./VM_Metasploitable/01-NMAP/02-rapports)
-    - [03-Doc/](./VM_Metasploitable/01-NMAP/04-Doc)
-    - [04-outils/](./VM_Metasploitable/01-NMAP/05-outils)
-    - 
+    - [03-Doc/](./VM_Metasploitable/01-NMAP/03-doc)
+    - [04-outils/](./VM_Metasploitable/01-NMAP/04-outils)
+
   - [02-enum4linux/](./VM_Metasploitable/02-enum4linux)
     - [01-brut/](./VM_Metasploitable/02-enum4linux/01-brut)
     - [02-rapports/](./VM_Metasploitable/02-enum4linux/02-rapports)
-    - [03-Doc/](./VM_Metasploitable/02-enum4linux/04-Doc)
-    - [04-outils/](./VM_Metasploitable/02-enum4linux/05-outils)
+    - [03-Doc/](./VM_Metasploitable/02-enum4linux/03-doc)
+    - [04-outils/](./VM_Metasploitable/02-enum4linux/04-outils)
     - 
   - [03-whatweb/](./VM_Metasploitable/03-whatweb)
     - [01-brut/](./VM_Metasploitable/03-whatweb/01-brut)
     - [02-rapports/](./VM_Metasploitable/03-whatweb/02-rapports)
-    - [03-Doc/](./VM_Metasploitable/03-whatweb/04-Doc)
-    - [04-outils/](./VM_Metasploitable/03-whatweb/05-outils)
-    - 
+    - [03-Doc/](./VM_Metasploitable/03-whatweb/03-doc)
+    - [04-outils/](./VM_Metasploitable/03-whatweb/04-outils)
+
   - [04-nikto/](./VM_Metasploitable/04-nikto)
     - [01-brut/](./VM_Metasploitable/04-nikto/01-brut)
     - [02-rapports/](./VM_Metasploitable/04-nikto/02-rapports)
-    - [03-Doc/](./VM_Metasploitable/04-nikto/04-Doc)
-    - [04-outils/](./VM_Metasploitable/04-nikto/05-outils)
+    - [03-Doc/](./VM_Metasploitable/04-nikto/03-doc)
+    - [04-outils/](./VM_Metasploitable/04-nikto/04-outils)
 ---
 - [VM_Windows/](./VM_Windows)
   - [01-NMAP/](./VM_Windows/01-NMAP)
     - [01-brut/](./VM_Windows/01-NMAP/01-brut)
     - [02-rapports/](./VM_Windows/01-NMAP/02-rapports)
-    - [03-doc/](./VM_Windows/01-NMAP/04-doc)
-    - [04-outils/](./VM_Windows/01-NMAP/05-outils)
-    - 
+    - [03-doc/](./VM_Windows/01-NMAP/03-doc)
+    - [04-outils/](./VM_Windows/01-NMAP/04-outils)
+
   - [02-enum4linux/](./VM_Windows/02-enum4linux)
     - [01-brut/](./VM_Windows/02-enum4linux/01-brut)
     - [02-rapports/](./VM_Windows/02-enum4linux/02-rapports)
-    - [03-doc/](./VM_Windows/02-enum4linux/04-doc)
-    - [04-outils/](./VM_Windows/02-enum4linux/05-outils)
-    - 
+    - [03-doc/](./VM_Windows/02-enum4linux/03-doc)
+    - [04-outils/](./VM_Windows/02-enum4linux/04-outils)
+  
   - [03-whatweb/](./VM_Windows/03-whatweb)
     - [01-brut/](./VM_Windows/03-whatweb/01-brut)
     - [02-rapports/](./VM_Windows/03-whatweb/02-rapports)
-    - [03-doc/](./VM_Windows/03-whatweb/04-doc)
-    - [04-outils/](./VM_Windows/03-whatweb/05-outils)
-    - 
+    - [03-doc/](./VM_Windows/03-whatweb/03-doc)
+    - [04-outils/](./VM_Windows/03-whatweb/04-outils)
+
   - [04-nikto/](./VM_Windows/04-nikto)
     - [01-brut/](./VM_Windows/04-nikto/01-brut)
     - [02-rapports/](./VM_Windows/04-nikto/02-rapports)
-    - [03-doc/](./VM_Windows/04-nikto/04-doc)
-    - [04-outils/](./VM_Windows/04-nikto/05-outils)
+    - [03-doc/](./VM_Windows/04-nikto/03-doc)
+    - [04-outils/](./VM_Windows/04-nikto/04-outils)
 ---
 
 *D’autres VM peuvent être ajoutées ici, en suivant cette même structure*
