@@ -19,7 +19,6 @@ Chaque dossier d’outil est organisé selon une structure identique avec :
 
 - `01-brut/` : fichiers bruts des scans.
 - `02-Doc/` : documentation et guides.
-- `03-outils/` : scripts et outils liés.
 
 ---
 
@@ -28,13 +27,3 @@ Chaque dossier d’outil est organisé selon une structure identique avec :
 - **Centraliser** toutes les données et résultats de reconnaissance liés à la VM cible.
 - **Faciliter** la lecture, l’analyse et la production de rapports exploitables.
 - **Structurer** les travaux pour une bonne traçabilité dans un projet de cybersécurité.
-- **Automatiser** les tâches grâce aux scripts dans les sous-dossiers `03-outils/`.
-
----
-
-## Conseils d’utilisation
-
-- Commencer par remplir les dossiers `01-brut/` avec les sorties directes des outils.
-- Compléter et consulter la documentation dans `02-Doc/`.
-- Utiliser les scripts dans `03-outils/` pour automatiser les étapes répétitives.
-- Maintenir une organisation identique pour toutes les VM afin de faciliter la comparaison et la gestion multi-cibles.
