@@ -38,52 +38,44 @@ Les résultats sont classés par outil dans des sous-dossiers, chacun contenant 
 - [VM_Metasploitable/](./VM_Metasploitable)
   - [01-NMAP/](./VM_Metasploitable/01-NMAP)
     - [01-brut/](./VM_Metasploitable/01-NMAP/01-brut)
-    - [02-rapports/](./VM_Metasploitable/01-NMAP/02-rapports)
-    - [03-Doc/](./VM_Metasploitable/01-NMAP/03-doc)
-    - [04-outils/](./VM_Metasploitable/01-NMAP/04-outils)
+    - [02-Doc/](./VM_Metasploitable/01-NMAP/02-doc)
+    - [03-outils/](./VM_Metasploitable/01-NMAP/03-outils)
 
   - [02-enum4linux/](./VM_Metasploitable/02-enum4linux)
     - [01-brut/](./VM_Metasploitable/02-enum4linux/01-brut)
-    - [02-rapports/](./VM_Metasploitable/02-enum4linux/02-rapports)
-    - [03-Doc/](./VM_Metasploitable/02-enum4linux/03-doc)
-    - [04-outils/](./VM_Metasploitable/02-enum4linux/04-outils)
+    - [02-Doc/](./VM_Metasploitable/02-enum4linux/02-doc)
+    - [03-outils/](./VM_Metasploitable/02-enum4linux/03-outils)
 
   - [03-whatweb/](./VM_Metasploitable/03-whatweb)
     - [01-brut/](./VM_Metasploitable/03-whatweb/01-brut)
-    - [02-rapports/](./VM_Metasploitable/03-whatweb/02-rapports)
-    - [03-Doc/](./VM_Metasploitable/03-whatweb/03-doc)
-    - [04-outils/](./VM_Metasploitable/03-whatweb/04-outils)
+    - [02-Doc/](./VM_Metasploitable/03-whatweb/02-doc)
+    - [03-outils/](./VM_Metasploitable/03-whatweb/03-outils)
 
   - [04-nikto/](./VM_Metasploitable/04-nikto)
     - [01-brut/](./VM_Metasploitable/04-nikto/01-brut)
-    - [02-rapports/](./VM_Metasploitable/04-nikto/02-rapports)
-    - [03-Doc/](./VM_Metasploitable/04-nikto/03-doc)
-    - [04-outils/](./VM_Metasploitable/04-nikto/04-outils)
+    - [02-Doc/](./VM_Metasploitable/04-nikto/02-doc)
+    - [03-outils/](./VM_Metasploitable/04-nikto/03-outils)
 ---
 - [VM_Windows/](./VM_Windows)
   - [01-NMAP/](./VM_Windows/01-NMAP)
     - [01-brut/](./VM_Windows/01-NMAP/01-brut)
-    - [02-rapports/](./VM_Windows/01-NMAP/02-rapports)
-    - [03-doc/](./VM_Windows/01-NMAP/03-doc)
-    - [04-outils/](./VM_Windows/01-NMAP/04-outils)
+    - [02-doc/](./VM_Windows/01-NMAP/02-doc)
+    - [03-outils/](./VM_Windows/01-NMAP/03-outils)
 
   - [02-enum4linux/](./VM_Windows/02-enum4linux)
     - [01-brut/](./VM_Windows/02-enum4linux/01-brut)
-    - [02-rapports/](./VM_Windows/02-enum4linux/02-rapports)
-    - [03-doc/](./VM_Windows/02-enum4linux/03-doc)
-    - [04-outils/](./VM_Windows/02-enum4linux/04-outils)
+    - [02-doc/](./VM_Windows/02-enum4linux/02-doc)
+    - [03-outils/](./VM_Windows/02-enum4linux/03-outils)
 
   - [03-whatweb/](./VM_Windows/03-whatweb)
     - [01-brut/](./VM_Windows/03-whatweb/01-brut)
-    - [02-rapports/](./VM_Windows/03-whatweb/02-rapports)
-    - [03-doc/](./VM_Windows/03-whatweb/03-doc)
-    - [04-outils/](./VM_Windows/03-whatweb/04-outils)
+    - [02-doc/](./VM_Windows/03-whatweb/02-doc)
+    - [03-outils/](./VM_Windows/03-whatweb/03-outils)
 
   - [04-nikto/](./VM_Windows/04-nikto)
     - [01-brut/](./VM_Windows/04-nikto/01-brut)
-    - [02-rapports/](./VM_Windows/04-nikto/02-rapports)
-    - [03-doc/](./VM_Windows/04-nikto/03-doc)
-    - [04-outils/](./VM_Windows/04-nikto/04-outils)
+    - [02-doc/](./VM_Windows/04-nikto/02-doc)
+    - [03-outils/](./VM_Windows/04-nikto/03-outils)
 ---
 
 *D’autres VM peuvent être ajoutées ici, en suivant cette même structure*
@@ -99,7 +91,5 @@ Les résultats sont classés par outil dans des sous-dossiers, chacun contenant 
 Un audit complet des machines **Metasploitable** et **Windows 10** réalisé avec les outils cités, comprenant :
 
 - Les fichiers de sortie bruts.
-- Des rapports clairs et détaillés au format Markdown.
-- Des rapports PDF prêts à être remis.
 - Une documentation expliquant les méthodes, commandes et observations.
 - Les scripts et autres outils utilisés.

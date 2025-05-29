@@ -39,7 +39,7 @@ En résumé, après l'envoi d'un **paquet SYN** (tentative d'intialisation TCP),
 |------|--------|--------------------------|--------------------------------|
 | 135  | Ouvert | msrpc                    | Microsoft Windows RPC          |
 | 139  | Ouvert | netbios-ssn              | Microsoft Windows netbios-ssn  |
-| 445  | Ouvert | microsoft-ds (probable)  | Aucun détail                   |
+| 445  | Ouvert | microsoft-ds (probable)  | Aucun détails                  |
 
 ---
 
@@ -108,7 +108,7 @@ Il utilise le protocole NetBIOS (ancien système de noms sur les réseaux Window
 | Signature des messages    | Activée mais **non requise**   |
 
 ##### Explication du script :
-Ce script interroge le service SMB (versions 2 et 3) sur la machine distante afin de déterminer son mode de sécurité, plus précisément les paramètres de signature des messages SMB, pour obtenir
+Ce script interroge le service SMB (versions 2 et 3) sur la machine distante afin de déterminer son mode de sécurité, plus précisément les paramètres de signature des messages SMB, pour vérifier :
 
 - Si la signature SMB est activée : les paquets SMB peuvent être signés pour garantir leur intégrité.
 

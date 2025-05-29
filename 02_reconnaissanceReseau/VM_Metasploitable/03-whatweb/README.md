@@ -6,21 +6,15 @@ Ce dossier regroupe tout ce qui concerne les scans réalisés avec **WhatWeb**, 
 
 - **01-brut/** : Sorties brutes de WhatWeb, généralement au format texte.
 
-- **02-rapports/** : Rapports en Markdown basés sur les résultats bruts, annotés et commentés.
+- **02-Doc/** : Documentation technique, tutoriels et explications sur l’utilisation de WhatWeb.
 
-- **03-pdf/** : Version PDF des rapports pour diffusion ou archivage.
-
-- **04-Doc/** : Documentation technique, tutoriels et explications sur l’utilisation de WhatWeb.
-
-- **05-outils/** : Scripts et outils pour automatiser les scans ou analyser les résultats.
+- **03-outils/** : Scripts et outils pour automatiser les scans ou analyser les résultats.
 
 ## Utilisation
 
 1. Lancer WhatWeb pour détecter les technologies web, sauvegarder les sorties dans `01-brut/`.
-2. Transformer ces données en rapports lisibles dans `02-rapports/`.
-3. Convertir en PDF dans `03-pdf/`.
-4. Lire les documents dans `04-Doc/` pour approfondir l’outil.
-5. Utiliser ou ajouter des scripts dans `05-outils/` pour automatiser les tâches.
+2. Lire les documents dans `02-Doc/` pour approfondir l’outil.
+3. Utiliser ou ajouter des scripts dans `03-outils/` pour automatiser les tâches.
 
 ---
 
