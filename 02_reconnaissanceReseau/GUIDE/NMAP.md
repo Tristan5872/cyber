@@ -1,223 +1,230 @@
-# <u>Commandes NMAP</u>
 
-1. **Scan SYN (TCP) rapide**  
-   
-   ```bash
-   sudo nmap -sS -Pn -oN nmap_tcp_syn.txt 10.0.2.15
-   ```  
-   
-2. **Scan UDP (top 20 ports)**  
-   
-   ```bash
-   sudo nmap -sU -Pn --top-ports 20 -oN nmap_udp_top20.txt 10.0.2.15  
-   ```
-
-3. **Scan versions services & détection OS**  
-   
-   ```bash
-   sudo nmap -sV -O -Pn -oN nmap_version_os.txt 10.0.2.15  
-   ```
-
-4. **Scan de tous les ports TCP (1–65535)**  
-   
-   ```bash
-   sudo nmap -p- -sS -Pn -oN nmap_tcp_all_ports.txt 10.0.2.15  
-   ```
-
-5. **Scan avec scripts NSE par défaut + version**  
-   
-   ```bash
-   sudo nmap -sC -sV -Pn -oN nmap_scripts.txt 10.0.2.15  
-   ```
+# 🛠️ Cours Complet Nmap (Hors NSE)
 
 ---
 
-# <u>Décomposition des arguments & justification</u>
+## 🔍 1. Introduction
 
-## `-sS`  
-- **`-s`** : sélection du type de scan  
-- **`S`** : SYN scan (envoie un SYN sans compléter la connexion TCP)  
-- **Justification** : rapide, furtif, souvent non détecté par les systèmes de logs.
-
-## `-sU`  
-- **`-s`** : sélection du type de scan  
-- **`U`** : scan UDP  
-- **Justification** : détecte les services UDP (ex : DNS, SNMP), souvent ignorés.
-
-## `-sV`  
-- **`-s`** : sélection du type de scan  
-- **`V`** : détection des versions des services  
-- **Justification** : permet d’identifier précisément les versions pour cibler des vulnérabilités.
-
-## `-sC`  
-- **`-s`** : sélection du type de scan  
-- **`C`** : lance les scripts NSE de la catégorie « default »  
-- **Justification** : effectue des vérifications automatiques utiles pour la reconnaissance.
-
-## `-O`  
-- Active la détection du système d’exploitation (OS fingerprinting)  
-- **Justification** : connaître l’OS cible aide à orienter les attaques.
-
-## `-p-`  
-- Scanne tous les ports TCP (1 à 65535)  
-- **Justification** : ne pas manquer un service sur un port non standard.
-
-## `-Pn`  
-- Ne pas faire de ping préalable (pas de découverte d’hôte par ICMP ou ARP)  
-- **Justification** : utile si la cible bloque les pings, évite les faux négatifs.
-
-## `--top-ports 20`  
-- Scanne uniquement les 20 ports les plus courants (TCP ou UDP)  
-- **Justification** : accélère le scan UDP qui est naturellement lent.
-
-## `-oN <fichier>`  
-- Sortie normale (format texte lisible) dans un fichier  
-- **Justification** : garder un historique clair des résultats.
-
-## `sudo`  
-- Nécessaire pour certains types de scans (SYN, UDP, détection OS) qui demandent les droits root.
+**Nmap** (Network Mapper) est un outil de scanner réseau utilisé pour la découverte d'hôtes et de services sur un réseau.
 
 ---
 
-# <u>Autres options utiles</u>
+## ⚙️ 2. Types de Scan TCP/UDP
 
-## `-T<0-5>`
+[Voir le cours sur les protocoles TCP/UDP](../GUIDE/Protocol_TCP-UDP.md)
 
+### 🔹 Scan TCP SYN (demi-ouvert) – rapide et discret
 ```bash
-sudo nmap -sS -Pn -T4 10.0.2.15
+sudo nmap -sS <IP>
 ```
 
-- **À quoi ça sert ?**
-   Cette option règle la vitesse du scan.
-
-  - `T0` = très lent, très discret (pratique si tu veux rester invisible, mais ça prend beaucoup de temps)
-
-  - `T5` = très rapide, mais ça fait du bruit sur le réseau (tu risques d’être détecté et même de perdre des paquets)
-
-- **Pourquoi utiliser `-T4` ?**
-   C’est un bon compromis : rapide sans trop faire de bruit, surtout sur un réseau local.
-
-## `--reason`
-
+### 🔹 Scan TCP connect() – pour utilisateurs non-root
 ```bash
-sudo nmap -sS -Pn --reason 10.0.2.15
-```
-- **À quoi ça sert ?**
-   Cette option indique pourquoi Nmap a classé un port comme ouvert, fermé ou filtré.
-   - Exemple : "Port 80 ouvert parce que Nmap a reçu un paquet SYN/ACK"
-
-- **Pourquoi c’est utile ?**
-Ça t’aide à comprendre la logique derrière le résultat, surtout si tu veux analyser ou vérifier le scan.
-
-## `-v, -vv, -d, -dd`
-
-```bash
-sudo nmap -sS -Pn -v -d 10.0.2.15
+nmap -sT <IP>
 ```
 
-- **À quoi ça sert ?**
-   Ce sont des niveaux d’information que Nmap affiche pendant le scan :
-
-   - `-v` ou `-vv` = verbosité : plus il y a de v, plus Nmap détaille ce qu’il fait
-
-   - `-d` ou `-dd` = debug : montre encore plus de détails techniques (utile si ça bloque ou plante)
-
-- **Pourquoi c’est utile ?**
-   Pour surveiller ce qui se passe en temps réel, comprendre des erreurs, ou analyser un comportement étrange.
-
-## `-A`
-
+### 🔹 Scan UDP – lent mais important
 ```bash
-sudo nmap -A -Pn 10.0.2.15
+sudo nmap -sU <IP>
 ```
 
-- **À quoi ça sert ?**
-   C’est un scan complet qui combine plusieurs options :
-
-   - `-sC` : lance des scripts de reconnaissance simples
-
-   - `-sV` : détecte les versions des services
-
-   - `-O` : détecte le système d’exploitation
-
-   - `--traceroute` : trace le chemin réseau vers la cible
-
-- **Pourquoi c’est utile ?**
-   Pour faire une reconnaissance approfondie rapide, et avoir un maximum d’informations sur la cible.
-
-- **Attention !**
-   Ce scan est bruyant, donc il peut être détecté facilement. À éviter sur des systèmes sensibles ou en production.
-
-## `-oX, -oG, -oA`
-
+### 🔹 Scan TCP ACK – pour repérer les filtres pare-feu
 ```bash
-sudo nmap -sS -Pn -oA scan_result 10.0.2.15
+sudo nmap -sA <IP>
 ```
 
-- **À quoi ça sert ?**
-   Ces options permettent d’enregistrer les résultats du scan dans des fichiers, pour les analyser plus tard :
-
-   - `-oX` : format XML (utile pour des outils qui lisent ce format)
-
-   - `-oG` : format "grepable" (texte simple, facile à filtrer avec grep)
-
-   - `-oA` : enregistre dans tous les formats d’un coup (.nmap, .xml, .gnmap)
-
-- **Pourquoi c’est utile ?**
-   Pour garder une trace des scans, faire des rapports, ou automatiser des analyses.
-
-## `-iL`
-
+### 🔹 Scan TCP Null, FIN, Xmas – furtivité contre pare-feu
 ```bash
-sudo nmap -sS -Pn -iL targets.txt -oA multi_scan
+nmap -sN <IP>
+nmap -sF <IP>
+nmap -sX <IP>
 ```
 
-- **À quoi ça sert ?**
-   Permet de scanner plusieurs adresses IP ou hôtes listés dans un fichier texte (targets.txt).
-
-- **Pourquoi c’est utile ?**
-   Quand tu dois scanner beaucoup de cibles, tu évites de taper chaque IP manuellement.
-
-# <u>Bonnes pratiques après les scans</u>
-
-## Nettoyage
-
+### 🔹 Scan Idle (zombie) – anonymat total
 ```bash
-rm -f *.xml *.nmap *.gnmap *.txt
+sudo nmap -sI <IP_zombie> <IP_cible>
 ```
+Le scan idle utilise un ordinateur « zombie » dont le numéro de paquet IP (IP ID) augmente à chaque message qu’il envoie.
 
-- **Pourquoi ?**
-Après un ou plusieurs scans, Nmap peut créer beaucoup de fichiers (résultats en XML, en texte, etc.).
-Ces fichiers peuvent vite s’accumuler et encombrer ton dossier de travail.
+**Exemple :**
 
-- **Ce que fait cette commande**
-Elle supprime tous les fichiers qui ont ces extensions (fichiers de résultats Nmap et fichiers texte), pour garder ton espace propre.
+    1. Avant le scan, le zombie a un numéro IP ID à 1000.
 
-- **Important**
-Fais attention à ne pas supprimer des fichiers importants par erreur. Si tu veux garder certains résultats, déplace-les avant de lancer cette commande.
+    2. Tu envoies un faux message à la cible en faisant croire que ça vient du zombie.
 
-## Organisation
+    3. Si le port de la cible est ouvert, elle répond au zombie, qui envoie alors un message en plus, et son IP ID passe à 1001.
 
-- **Pourquoi organiser ?**
-   Quand tu fais beaucoup de scans différents (reconnaissance, détection de vulnérabilités, audits, etc.), ça devient difficile de retrouver les résultats.
+    4. Si le port est fermé, le zombie n’envoie rien et son IP ID reste à 1000.
 
-- **Conseil**
-   Crée des dossiers avec des noms clairs pour chaque type de scan :
+En comparant ces numéros, tu sais si le port est ouvert ou fermé, sans que la cible sache que c’est toi qui fais le scan.
 
-   - reconnaissance/ pour les scans de découverte réseau
-
-   - vulnerabilites/ pour les scans de failles de sécurité
-
-   - etc.
-
-- **Avantage**
-Ça facilite la gestion, la consultation, et le partage des résultats.
+### 🔹 Scan TCP Maimon – variante peu connue
+```bash
+nmap -sM <IP>
+```
 
 ---
 
-# <u>Stratégie recommandée</u>  
-> 1. Lancer un scan TCP SYN rapide (`-sS -Pn`).  
-> 2. Poursuivre par un scan UDP limité aux 20 ports principaux (`-sU --top-ports 20`).  
-> 3. Faire un scan avec détection des versions et OS (`-sV -O`).  
-> 4. Si besoin, scanner tous les ports TCP (`-p- -sS`).  
-> 5. Terminer par un scan avec scripts NSE par défaut (`-sC -sV`).  
+## 🌐 3. Découverte d’Hôtes (Host Discovery)
+
+### 🔸 Ping ICMP
+```bash
+nmap -sn <IP>
+```
+
+### 🔸 Ping TCP (sur un port)
+```bash
+nmap -PS80 <IP>
+```
+
+### 🔸 Ping UDP
+```bash
+nmap -PU53 <IP>
+```
+
+### 🔸 Pas de ping (utile si ICMP est bloqué)
+```bash
+nmap -Pn <IP>
+```
+
+---
+
+## 📦 4. Scan de Ports
+
+### 🔹 Ports par défaut
+1000 ports les plus courants (par défaut)
+
+### 🔹 Tous les ports
+```bash
+nmap -p- <IP>
+```
+
+### 🔹 Plages personnalisées
+```bash
+nmap -p 1-1024,3306,8080 <IP>
+```
+
+---
+
+## 🎯 5. Ciblage & Filtres
+
+### 🔸 Fichier d’IP (multi-scan)
+```bash
+nmap -iL targets.txt
+```
+
+### 🔸 Exclure des hôtes
+```bash
+nmap --exclude 192.168.1.5,192.168.1.10
+```
+
+### 🔸 Liste des cibles résolues (sans scan)
+```bash
+nmap -sL <IP_range>
+```
+
+---
+
+## 🚀 6. Optimisation & Timing
+
+### 🔹 Vitesse du scan
+```bash
+nmap -T<0-5>
+```
+
+- T0 : Paranoïaque (furtif)
+- T4 : Rapide (idéal en LAN)
+- T5 : Insane (risque de détection élevé)
+
+### 🔹 Réduction des retransmissions
+```bash
+nmap --max-retries 2
+```
+
+### 🔹 Timeout par port
+```bash
+nmap --host-timeout 60m
+```
+
+---
+
+## 🕵️ 7. Furtivité & Contournement IDS
+
+### 🔸 Fragmentation de paquets
+```bash
+nmap -f <IP>
+```
+
+### 🔸 Source port falsifié (ex: DNS)
+```bash
+sudo nmap --source-port 53 <IP>
+```
+
+### 🔸 Longueur de paquet aléatoire
+```bash
+nmap --data-length 50 <IP>
+```
+
+### 🔸 IP Spoofing (scan limité)
+```bash
+nmap -S <FAUSSE_IP> <IP_CIBLE>
+```
+
+---
+
+## 📁 8. Sortie & Reporting
+
+### 🔹 Sortie normale
+```bash
+nmap -oN resultat.txt <IP>
+```
+
+### 🔹 Sortie XML / grep / tous formats
+```bash
+nmap -oX result.xml -oG result.gnmap -oA full_result <IP>
+```
+
+---
+
+## 📋 9. Stratégies de Scan
+
+### 🔸 Stratégie Recon Standard (bruyante)
+1. `nmap -sS -Pn -T4`
+2. `nmap -sU --top-ports 100`
+3. `nmap -sV -O -Pn`
+4. `nmap -p- -sS`
+5. `nmap -A`
+
+### 🔸 Stratégie furtive
+1. `nmap -sS -T0 --scan-delay 5s`
+2. `nmap -sF -f --data-length 50`
+
+### 🔸 Scan large (multi-cibles)
+```bash
+nmap -iL liste_ips.txt -T4 -oA multi_resultats
+```
+
+---
+
+## 🧼 10. Post-Scan
+
+### 🔹 Nettoyage fichiers
+```bash
+rm *.nmap *.xml *.gnmap *.txt
+```
+
+### 🔹 Organisation
+- `reconnaissance/`
+- `tcp_udp/`
+- `resultats_bruts/`
+- `analyses/`
+
+---
+
+## ⚠️ 11. Bonnes pratiques & erreurs fréquentes
+
+- Ne jamais scanner sans autorisation
+- Ne pas abuser des scans UDP (très longs)
+- Toujours lire les messages d'erreur Nmap
+- Comparer les scans dans le temps (`ndiff`)
+- Ne pas se fier uniquement à un type de scan
