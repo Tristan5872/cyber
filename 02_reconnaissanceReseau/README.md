@@ -38,22 +38,22 @@ Les résultats sont classés par outil dans des sous-dossiers, chacun contenant 
 - [VM_Metasploitable/](./VM_Metasploitable)
   - [01-NMAP/](./VM_Metasploitable/01-NMAP)
     - [01-brut/](./VM_Metasploitable/01-NMAP/01-brut)
-    - [02-Doc/](./VM_Metasploitable/01-NMAP/02-doc)
+    - [02-doc/](./VM_Metasploitable/01-NMAP/02-doc)
     - [03-outils/](./VM_Metasploitable/01-NMAP/03-outils)
 
   - [02-enum4linux/](./VM_Metasploitable/02-enum4linux)
     - [01-brut/](./VM_Metasploitable/02-enum4linux/01-brut)
-    - [02-Doc/](./VM_Metasploitable/02-enum4linux/02-doc)
+    - [02-doc/](./VM_Metasploitable/02-enum4linux/02-doc)
     - [03-outils/](./VM_Metasploitable/02-enum4linux/03-outils)
 
   - [03-whatweb/](./VM_Metasploitable/03-whatweb)
     - [01-brut/](./VM_Metasploitable/03-whatweb/01-brut)
-    - [02-Doc/](./VM_Metasploitable/03-whatweb/02-doc)
+    - [02-doc/](./VM_Metasploitable/03-whatweb/02-doc)
     - [03-outils/](./VM_Metasploitable/03-whatweb/03-outils)
 
   - [04-nikto/](./VM_Metasploitable/04-nikto)
     - [01-brut/](./VM_Metasploitable/04-nikto/01-brut)
-    - [02-Doc/](./VM_Metasploitable/04-nikto/02-doc)
+    - [02-doc/](./VM_Metasploitable/04-nikto/02-doc)
     - [03-outils/](./VM_Metasploitable/04-nikto/03-outils)
 ---
 - [VM_Windows/](./VM_Windows)
