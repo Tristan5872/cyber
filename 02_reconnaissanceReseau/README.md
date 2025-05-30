@@ -4,7 +4,7 @@
 
 Ce projet s'inscrit dans le cadre d’une semaine dédiée à la **reconnaissance réseau** dans un cursus en cybersécurité / réseaux.
 
-L’objectif est d’apprendre à utiliser différents outils de scan et d’énumération pour analyser des systèmes cibles — ici une machine virtuelle vulnérable **Metasploitable** et une machine d'entreprise **Windows 10**.
+L’objectif est d’apprendre à utiliser différents outils de scan et d’énumération pour analyser des systèmes cibles — ici une machine virtuelle vulnérable **Metasploitable**.
 
 ---
 
@@ -52,36 +52,18 @@ Les résultats sont classés par outil dans des sous-dossiers, chacun contenant 
   - [04-nikto/](./VM_Metasploitable/04-nikto)
     - [01-brut/](./VM_Metasploitable/04-nikto/01-brut)
     - [02-doc/](./VM_Metasploitable/04-nikto/02-doc)
----
-- [VM_Windows/](./VM_Windows)
-  - [01-NMAP/](./VM_Windows/01-NMAP)
-    - [01-brut/](./VM_Windows/01-NMAP/01-brut)
-    - [02-doc/](./VM_Windows/01-NMAP/02-doc)
 
-  - [02-enum4linux/](./VM_Windows/02-enum4linux)
-    - [01-brut/](./VM_Windows/02-enum4linux/01-brut)
-    - [02-doc/](./VM_Windows/02-enum4linux/02-doc)
-
-  - [03-whatweb/](./VM_Windows/03-whatweb)
-    - [01-brut/](./VM_Windows/03-whatweb/01-brut)
-    - [02-doc/](./VM_Windows/03-whatweb/02-doc)
-
-  - [04-nikto/](./VM_Windows/04-nikto)
-    - [01-brut/](./VM_Windows/04-nikto/01-brut)
-    - [02-doc/](./VM_Windows/04-nikto/02-doc)
 ---
 
 *D’autres VM peuvent être ajoutées ici, en suivant cette même structure*
 
 ---
 
-
-
 # D’autres VM peuvent être ajoutées ici, en suivant cette même structure
 
 ## Livrable attendu
 
-Un audit complet des machines **Metasploitable** et **Windows 10** réalisé avec les outils cités, comprenant :
+Un audit complet de la machine **Metasploitable**  réalisé avec les outils cités, comprenant :
 
 - Les fichiers de sortie bruts.
 - Une documentation expliquant les méthodes, commandes et observations.
