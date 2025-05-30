@@ -1,0 +1,397 @@
+# Nmap 7.95 scan initiated Fri May 30 19:19:53 2025 as: /usr/lib/nmap/nmap -vv -sV -p21,22,23,25,53,80,111,139,445,512,513,514,1099,1524,2049,2121,3306,3632,5432,5900,6000,6667,6697,8009,8180,8787,41797,49076,52749,59807 --script vuln --script-timeout 30s -oN metaploitable_scanVuln.txt 10.0.10.2
+Nmap scan report for 10.0.10.2
+Host is up, received arp-response (0.00028s latency).
+Scanned at 2025-05-30 19:20:07 EDT for 218s
+
+PORT      STATE SERVICE     REASON         VERSION
+21/tcp    open  ftp         syn-ack ttl 64 vsftpd 2.3.4
+| ftp-vsftpd-backdoor: 
+|   VULNERABLE:
+|   vsFTPd version 2.3.4 backdoor
+|     State: VULNERABLE (Exploitable)
+|     IDs:  BID:48539  CVE:CVE-2011-2523
+|       vsFTPd version 2.3.4 backdoor, this was reported on 2011-07-04.
+|     Disclosure date: 2011-07-03
+|     Exploit results:
+|       Shell command: id
+|       Results: uid=0(root) gid=0(root)
+|     References:
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-2523
+|       https://www.securityfocus.com/bid/48539
+|       http://scarybeastsecurity.blogspot.com/2011/07/alert-vsftpd-download-backdoored.html
+|_      https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/unix/ftp/vsftpd_234_backdoor.rb
+22/tcp    open  ssh         syn-ack ttl 64 OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+23/tcp    open  telnet      syn-ack ttl 64 Linux telnetd
+25/tcp    open  smtp        syn-ack ttl 64 Postfix smtpd
+| smtp-vuln-cve2010-4344: 
+|_  The SMTP server is not Exim: NOT VULNERABLE
+53/tcp    open  domain      syn-ack ttl 64 ISC BIND 9.4.2
+80/tcp    open  http        syn-ack ttl 64 Apache httpd 2.2.8 ((Ubuntu) DAV/2)
+|_http-server-header: Apache/2.2.8 (Ubuntu) DAV/2
+| http-trace: TRACE is enabled
+| Headers:
+| Date: Fri, 30 May 2025 23:22:51 GMT
+| Server: Apache/2.2.8 (Ubuntu) DAV/2
+| Connection: close
+| Transfer-Encoding: chunked
+|_Content-Type: message/http
+|_http-vuln-cve2017-1001000: ERROR: Script execution failed (use -d to debug)
+|_http-jsonp-detection: Couldn't find any JSONP endpoints.
+| http-sql-injection: 
+|   Possible sqli for queries:
+|     http://10.0.10.2:80/dav/?C=D%3BO%3DA%27%20OR%20sqlspider
+|     http://10.0.10.2:80/dav/?C=N%3BO%3DD%27%20OR%20sqlspider
+|     http://10.0.10.2:80/dav/?C=S%3BO%3DA%27%20OR%20sqlspider
+|     http://10.0.10.2:80/dav/?C=M%3BO%3DA%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/index.php?username=anonymous&page=password-generator.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/index.php?page=set-background-color.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/index.php?do=toggle-security%27%20OR%20sqlspider&page=home.php
+|     http://10.0.10.2:80/mutillidae/index.php?page=change-log.htm%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/index.php?page=dns-lookup.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/index.php?page=secret-administrative-pages.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/index.php?page=pen-test-tool-lookup.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/?page=add-to-your-blog.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/index.php?page=captured-data.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/index.php?page=home.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/index.php?page=arbitrary-file-inclusion.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/index.php?page=view-someones-blog.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/?page=source-viewer.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/index.php?page=php-errors.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/index.php?page=credits.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/?page=credits.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/?page=show-log.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/index.php?page=documentation%2Fvulnerabilities.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/index.php?page=notes.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/index.php?page=usage-instructions.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/index.php?page=text-file-viewer.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/index.php?page=documentation%2Fhow-to-access-Mutillidae-over-Virtual-Box-network.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/?page=login.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/?page=view-someones-blog.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/index.php?page=user-info.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/index.php?page=framing.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/index.php?page=login.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/index.php?page=register.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/index.php?page=show-log.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/index.php?page=add-to-your-blog.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/index.php?page=user-poll.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/index.php?page=browser-info.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/index.php?page=source-viewer.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/index.php?page=installation.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/index.php?do=toggle-hints%27%20OR%20sqlspider&page=home.php
+|     http://10.0.10.2:80/mutillidae/index.php?page=html5-storage.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/index.php?page=capture-data.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/?page=user-info.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/index.php?page=site-footer-xss-discussion.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/mutillidae/?page=text-file-viewer.php%27%20OR%20sqlspider
+|     http://10.0.10.2:80/view/TWiki/TWikiHistory?rev=1.8%27%20OR%20sqlspider
+|     http://10.0.10.2:80/rdiff/TWiki/TWikiHistory?rev2=1.8%27%20OR%20sqlspider&rev1=1.9
+|     http://10.0.10.2:80/rdiff/TWiki/TWikiHistory?rev2=1.8&rev1=1.9%27%20OR%20sqlspider
+|     http://10.0.10.2:80/rdiff/TWiki/TWikiHistory?rev2=1.7%27%20OR%20sqlspider&rev1=1.8
+|     http://10.0.10.2:80/rdiff/TWiki/TWikiHistory?rev2=1.7&rev1=1.8%27%20OR%20sqlspider
+|     http://10.0.10.2:80/oops/TWiki/TWikiHistory?param1=1.10%27%20OR%20sqlspider&template=oopsrev
+|     http://10.0.10.2:80/oops/TWiki/TWikiHistory?param1=1.10&template=oopsrev%27%20OR%20sqlspider
+|     http://10.0.10.2:80/view/TWiki/TWikiHistory?rev=1.7%27%20OR%20sqlspider
+|     http://10.0.10.2:80/rdiff/TWiki/TWikiHistory?rev2=1.9%27%20OR%20sqlspider&rev1=1.10
+|     http://10.0.10.2:80/rdiff/TWiki/TWikiHistory?rev2=1.9&rev1=1.10%27%20OR%20sqlspider
+|     http://10.0.10.2:80/view/TWiki/TWikiHistory?rev=1.9%27%20OR%20sqlspider
+|     http://10.0.10.2:80/view/TWiki/TWikiHistory?rev=1.8%27%20OR%20sqlspider
+|     http://10.0.10.2:80/rdiff/TWiki/TWikiHistory?rev2=1.8%27%20OR%20sqlspider&rev1=1.9
+|     http://10.0.10.2:80/rdiff/TWiki/TWikiHistory?rev2=1.8&rev1=1.9%27%20OR%20sqlspider
+|     http://10.0.10.2:80/oops/TWiki/TWikiHistory?param1=1.10%27%20OR%20sqlspider&template=oopsrev
+|     http://10.0.10.2:80/oops/TWiki/TWikiHistory?param1=1.10&template=oopsrev%27%20OR%20sqlspider
+|     http://10.0.10.2:80/view/TWiki/TWikiHistory?rev=1.7%27%20OR%20sqlspider
+|     http://10.0.10.2:80/rdiff/TWiki/TWikiHistory?rev2=1.7%27%20OR%20sqlspider&rev1=1.8
+|     http://10.0.10.2:80/rdiff/TWiki/TWikiHistory?rev2=1.7&rev1=1.8%27%20OR%20sqlspider
+|     http://10.0.10.2:80/rdiff/TWiki/TWikiHistory?rev2=1.9%27%20OR%20sqlspider&rev1=1.10
+|     http://10.0.10.2:80/rdiff/TWiki/TWikiHistory?rev2=1.9&rev1=1.10%27%20OR%20sqlspider
+|     http://10.0.10.2:80/view/TWiki/TWikiHistory?rev=1.9%27%20OR%20sqlspider
+|     http://10.0.10.2:80/dav/?C=D%3BO%3DD%27%20OR%20sqlspider
+|     http://10.0.10.2:80/dav/?C=M%3BO%3DA%27%20OR%20sqlspider
+|     http://10.0.10.2:80/dav/?C=N%3BO%3DA%27%20OR%20sqlspider
+|     http://10.0.10.2:80/dav/?C=S%3BO%3DA%27%20OR%20sqlspider
+|     http://10.0.10.2:80/dav/?C=D%3BO%3DA%27%20OR%20sqlspider
+|     http://10.0.10.2:80/dav/?C=M%3BO%3DA%27%20OR%20sqlspider
+|     http://10.0.10.2:80/dav/?C=N%3BO%3DA%27%20OR%20sqlspider
+|     http://10.0.10.2:80/dav/?C=S%3BO%3DA%27%20OR%20sqlspider
+|     http://10.0.10.2:80/dav/?C=D%3BO%3DA%27%20OR%20sqlspider
+|     http://10.0.10.2:80/dav/?C=M%3BO%3DA%27%20OR%20sqlspider
+|     http://10.0.10.2:80/dav/?C=S%3BO%3DD%27%20OR%20sqlspider
+|     http://10.0.10.2:80/dav/?C=N%3BO%3DA%27%20OR%20sqlspider
+|     http://10.0.10.2:80/dav/?C=D%3BO%3DA%27%20OR%20sqlspider
+|     http://10.0.10.2:80/dav/?C=M%3BO%3DD%27%20OR%20sqlspider
+|     http://10.0.10.2:80/dav/?C=N%3BO%3DA%27%20OR%20sqlspider
+|_    http://10.0.10.2:80/dav/?C=S%3BO%3DA%27%20OR%20sqlspider
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-wordpress-users: [Error] Wordpress installation was not found. We couldn't find wp-login.php
+| http-enum: 
+|   /tikiwiki/: Tikiwiki
+|   /test/: Test page
+|   /phpinfo.php: Possible information file
+|   /phpMyAdmin/: phpMyAdmin
+|   /doc/: Potentially interesting directory w/ listing on 'apache/2.2.8 (ubuntu) dav/2'
+|   /icons/: Potentially interesting folder w/ directory listing
+|_  /index/: Potentially interesting folder
+| http-csrf: 
+| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=10.0.10.2
+|   Found the following possible CSRF vulnerabilities: 
+|     
+|     Path: http://10.0.10.2:80/dvwa/
+|     Form id: 
+|     Form action: login.php
+|     
+|     Path: http://10.0.10.2:80/dvwa/login.php
+|     Form id: 
+|     Form action: login.php
+|     
+|     Path: http://10.0.10.2:80/twiki/TWikiDocumentation.html
+|     Form id: 
+|     Form action: http://TWiki.org/cgi-bin/passwd/TWiki/WebHome
+|     
+|     Path: http://10.0.10.2:80/twiki/TWikiDocumentation.html
+|     Form id: 
+|     Form action: http://TWiki.org/cgi-bin/passwd/Main/WebHome
+|     
+|     Path: http://10.0.10.2:80/twiki/TWikiDocumentation.html
+|     Form id: 
+|     Form action: http://TWiki.org/cgi-bin/edit/TWiki/
+|     
+|     Path: http://10.0.10.2:80/twiki/TWikiDocumentation.html
+|     Form id: 
+|     Form action: http://TWiki.org/cgi-bin/view/TWiki/TWikiSkins
+|     
+|     Path: http://10.0.10.2:80/twiki/TWikiDocumentation.html
+|     Form id: 
+|_    Form action: http://TWiki.org/cgi-bin/manage/TWiki/ManagingWebs
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-fileupload-exploiter: 
+|   
+|_    Couldn't find a file-type field.
+111/tcp   open  rpcbind     syn-ack ttl 64 2 (RPC #100000)
+| rpcinfo: 
+|   program version    port/proto  service
+|   100000  2            111/tcp   rpcbind
+|   100000  2            111/udp   rpcbind
+|   100003  2,3,4       2049/tcp   nfs
+|   100003  2,3,4       2049/udp   nfs
+|   100005  1,2,3      38841/udp   mountd
+|   100005  1,2,3      49076/tcp   mountd
+|   100021  1,3,4      40185/udp   nlockmgr
+|   100021  1,3,4      52749/tcp   nlockmgr
+|   100024  1          41797/tcp   status
+|_  100024  1          42050/udp   status
+139/tcp   open  netbios-ssn syn-ack ttl 64 Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+445/tcp   open  netbios-ssn syn-ack ttl 64 Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+512/tcp   open  exec        syn-ack ttl 64 netkit-rsh rexecd
+513/tcp   open  login?      syn-ack ttl 64
+514/tcp   open  shell       syn-ack ttl 64 Netkit rshd
+1099/tcp  open  java-rmi    syn-ack ttl 64 GNU Classpath grmiregistry
+| rmi-vuln-classloader: 
+|   VULNERABLE:
+|   RMI registry default configuration remote code execution vulnerability
+|     State: VULNERABLE
+|       Default configuration of RMI registry allows loading classes from remote URLs which can lead to remote code execution.
+|       
+|     References:
+|_      https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/misc/java_rmi_server.rb
+1524/tcp  open  bindshell   syn-ack ttl 64 Metasploitable root shell
+2049/tcp  open  nfs         syn-ack ttl 64 2-4 (RPC #100003)
+2121/tcp  open  ftp         syn-ack ttl 64 ProFTPD 1.3.1
+3306/tcp  open  mysql?      syn-ack ttl 64
+3632/tcp  open  distccd     syn-ack ttl 64 distccd v1 ((GNU) 4.2.4 (Ubuntu 4.2.4-1ubuntu4))
+| distcc-cve2004-2687: 
+|   VULNERABLE:
+|   distcc Daemon Command Execution
+|     State: VULNERABLE (Exploitable)
+|     IDs:  CVE:CVE-2004-2687
+|     Risk factor: High  CVSSv2: 9.3 (HIGH) (AV:N/AC:M/Au:N/C:C/I:C/A:C)
+|       Allows executing of arbitrary commands on systems running distccd 3.1 and
+|       earlier. The vulnerability is the consequence of weak service configuration.
+|       
+|     Disclosure date: 2002-02-01
+|     Extra information:
+|       
+|     uid=1(daemon) gid=1(daemon) groups=1(daemon)
+|   
+|     References:
+|       https://nvd.nist.gov/vuln/detail/CVE-2004-2687
+|       https://distcc.github.io/security.html
+|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-2687
+5432/tcp  open  postgresql  syn-ack ttl 64 PostgreSQL DB 8.3.0 - 8.3.7
+| ssl-dh-params: 
+|   VULNERABLE:
+|   Diffie-Hellman Key Exchange Insufficient Group Strength
+|     State: VULNERABLE
+|       Transport Layer Security (TLS) services that use Diffie-Hellman groups
+|       of insufficient strength, especially those using one of a few commonly
+|       shared groups, may be susceptible to passive eavesdropping attacks.
+|     Check results:
+|       WEAK DH GROUP 1
+|             Cipher Suite: TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA
+|             Modulus Type: Safe prime
+|             Modulus Source: Unknown/Custom-generated
+|             Modulus Length: 1024
+|             Generator Length: 8
+|             Public Key Length: 1024
+|     References:
+|_      https://weakdh.org
+5900/tcp  open  vnc         syn-ack ttl 64 VNC (protocol 3.3)
+6000/tcp  open  X11         syn-ack ttl 64 (access denied)
+6667/tcp  open  irc         syn-ack ttl 64 UnrealIRCd (Admin email admin@Metasploitable.LAN)
+| irc-botnet-channels: 
+|_  ERROR: Closing Link: [10.0.10.1] (Too many unknown connections from your IP)
+6697/tcp  open  irc         syn-ack ttl 64 UnrealIRCd (Admin email admin@Metasploitable.LAN)
+|_irc-unrealircd-backdoor: Looks like trojaned version of unrealircd. See http://seclists.org/fulldisclosure/2010/Jun/277
+|_ssl-ccs-injection: No reply from server (TIMEOUT)
+| irc-botnet-channels: 
+|_  ERROR: Closing Link: [10.0.10.1] (Too many unknown connections from your IP)
+8009/tcp  open  ajp13       syn-ack ttl 64 Apache Jserv (Protocol v1.3)
+8180/tcp  open  http        syn-ack ttl 64 Apache Tomcat/Coyote JSP engine 1.1
+| http-cookie-flags: 
+|   /admin/: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/index.html: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/login.html: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/admin.html: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/account.html: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/admin_login.html: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/home.html: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/admin-login.html: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/adminLogin.html: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/controlpanel.html: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/cp.html: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/index.jsp: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/login.jsp: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/admin.jsp: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/home.jsp: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/controlpanel.jsp: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/admin-login.jsp: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/cp.jsp: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/account.jsp: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/admin_login.jsp: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/adminLogin.jsp: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/view/javascript/fckeditor/editor/filemanager/connectors/test.html: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/includes/FCKeditor/editor/filemanager/upload/test.html: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/jscript/upload.html: 
+|     JSESSIONID: 
+|_      httponly flag not set
+| http-enum: 
+|   /admin/: Possible admin folder
+|   /admin/index.html: Possible admin folder
+|   /admin/login.html: Possible admin folder
+|   /admin/admin.html: Possible admin folder
+|   /admin/account.html: Possible admin folder
+|   /admin/admin_login.html: Possible admin folder
+|   /admin/home.html: Possible admin folder
+|   /admin/admin-login.html: Possible admin folder
+|   /admin/adminLogin.html: Possible admin folder
+|   /admin/controlpanel.html: Possible admin folder
+|   /admin/cp.html: Possible admin folder
+|   /admin/index.jsp: Possible admin folder
+|   /admin/login.jsp: Possible admin folder
+|   /admin/admin.jsp: Possible admin folder
+|   /admin/home.jsp: Possible admin folder
+|   /admin/controlpanel.jsp: Possible admin folder
+|   /admin/admin-login.jsp: Possible admin folder
+|   /admin/cp.jsp: Possible admin folder
+|   /admin/account.jsp: Possible admin folder
+|   /admin/admin_login.jsp: Possible admin folder
+|   /admin/adminLogin.jsp: Possible admin folder
+|   /manager/html/upload: Apache Tomcat (401 Unauthorized)
+|   /manager/html: Apache Tomcat (401 Unauthorized)
+|   /admin/view/javascript/fckeditor/editor/filemanager/connectors/test.html: OpenCart/FCKeditor File upload
+|   /admin/includes/FCKeditor/editor/filemanager/upload/test.html: ASP Simple Blog / FCKeditor File Upload
+|   /admin/jscript/upload.html: Lizard Cart/Remote File upload
+|_  /webdav/: Potentially interesting folder
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-wordpress-users: [Error] Wordpress installation was not found. We couldn't find wp-login.php
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-jsonp-detection: Couldn't find any JSONP endpoints.
+|_http-litespeed-sourcecode-download: Request with null byte did not work. This web server might not be vulnerable
+| http-csrf: 
+| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=10.0.10.2
+|   Found the following possible CSRF vulnerabilities: 
+|     
+|     Path: http://10.0.10.2:8180/servlets-examples/servlet/RequestParamExample
+|     Form id: 
+|     Form action: RequestParamExample
+|     
+|     Path: http://10.0.10.2:8180/servlets-examples/servlet/SessionExample
+|     Form id: 
+|     Form action: SessionExample;jsessionid=1B33B3F9E7CB4B11C7E4F281218300CE
+|     
+|     Path: http://10.0.10.2:8180/servlets-examples/servlet/SessionExample
+|     Form id: 
+|     Form action: SessionExample;jsessionid=1B33B3F9E7CB4B11C7E4F281218300CE
+|     
+|     Path: http://10.0.10.2:8180/servlets-examples/servlet/CookieExample
+|     Form id: 
+|_    Form action: CookieExample
+8787/tcp  open  drb         syn-ack ttl 64 Ruby DRb RMI (Ruby 1.8; path /usr/lib/ruby/1.8/drb)
+41797/tcp open  status      syn-ack ttl 64 1 (RPC #100024)
+49076/tcp open  mountd      syn-ack ttl 64 1-3 (RPC #100005)
+52749/tcp open  nlockmgr    syn-ack ttl 64 1-4 (RPC #100021)
+59807/tcp open  java-rmi    syn-ack ttl 64 GNU Classpath grmiregistry
+| rmi-vuln-classloader: 
+|   VULNERABLE:
+|   RMI registry default configuration remote code execution vulnerability
+|     State: VULNERABLE
+|       Default configuration of RMI registry allows loading classes from remote URLs which can lead to remote code execution.
+|       
+|     References:
+|_      https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/misc/java_rmi_server.rb
+MAC Address: 08:00:27:32:E4:1F (PCS Systemtechnik/Oracle VirtualBox virtual NIC)
+Service Info: Host:  metasploitable.localdomain; OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+
+Host script results:
+|_smb-vuln-ms10-054: false
+|_smb-vuln-regsvc-dos: ERROR: Script execution failed (use -d to debug)
+|_smb-vuln-ms10-061: false
+
+Read data files from: /usr/share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri May 30 19:23:45 2025 -- 1 IP address (1 host up) scanned in 231.68 seconds

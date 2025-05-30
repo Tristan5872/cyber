@@ -71,6 +71,7 @@ nmap -sM <IP>
 ```bash
 nmap -sn <IP>
 ```
+==> Permet de faire un scan de machines et non de ports
 
 ### 🔸 Ping TCP (sur un port)
 ```bash
@@ -102,6 +103,11 @@ nmap -p- <IP>
 ### 🔹 Plages personnalisées
 ```bash
 nmap -p 1-1024,3306,8080 <IP>
+```
+
+### 🔹 Plages personnalisées (avec un fichier)
+```bash
+nmap -p$(cat ports.txt) <IP>
 ```
 
 ---
@@ -206,22 +212,7 @@ nmap -iL liste_ips.txt -T4 -oA multi_resultats
 
 ---
 
-## 🧼 10. Post-Scan
-
-### 🔹 Nettoyage fichiers
-```bash
-rm *.nmap *.xml *.gnmap *.txt
-```
-
-### 🔹 Organisation
-- `reconnaissance/`
-- `tcp_udp/`
-- `resultats_bruts/`
-- `analyses/`
-
----
-
-## ⚠️ 11. Bonnes pratiques & erreurs fréquentes
+## ⚠️ 10. Bonnes pratiques & erreurs fréquentes
 
 - Ne jamais scanner sans autorisation
 - Ne pas abuser des scans UDP (très longs)
