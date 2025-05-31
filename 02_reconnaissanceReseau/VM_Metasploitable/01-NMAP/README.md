@@ -5,7 +5,6 @@ Ce dossier contient tous les fichiers relatifs aux scans réalisés avec **Nmap*
 ## Organisation des sous-dossiers
 
 - **01-brut/** : Contient les fichiers bruts générés directement par Nmap au format texte (`.txt`).  
-  Exemple : `nmap_all.txt`, `nmap_tcp_syn.txt`.
 
 - **02-Doc/** : Contient la documentation, guides, notes sur les scans, explications sur les options Nmap utilisées, fichiers `.md`.
 
@@ -15,8 +14,6 @@ Ce dossier contient tous les fichiers relatifs aux scans réalisés avec **Nmap*
 
 1. Lancer les scans Nmap et enregistrer les sorties dans `01-brut/`.
 2. Consulter la documentation dans `02-Doc/` pour comprendre les options utilisées.
-3. Utiliser ou développer des scripts dans `03-outils/` pour automatiser ou étendre les capacités.
-
 ---
 
 **Note :** Ce dossier est organisé pour faciliter la traçabilité des données et le travail collaboratif en cybersécurité.
