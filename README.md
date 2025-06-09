@@ -1,5 +1,5 @@
 # Mon tout premier gros projet
-
+*notes : pendant ce projet, j'utiliserais l'IA générative afin d'accélérer le processus de rédaction tout en le rendant plus facile à comprendre*
 ## 🧠 Objectif
 
 Ce projet marque une étape cruciale dans mon parcours en **cybersécurité**.  
@@ -27,7 +27,7 @@ C’est cette démarche active d’apprentissage qui me permet de progresser con
 
 Ce projet est organisé en 3 mois, avec :
 - Un **plan clair et progressif**
-- Des **livrables documentés** (PDF, Markdown, code)
+- Des **livrables documentés**
 - Un **portfolio final** à publier en ligne
 
 👉 Voir le [plan détaillé du projet](./plan_progression.md)
