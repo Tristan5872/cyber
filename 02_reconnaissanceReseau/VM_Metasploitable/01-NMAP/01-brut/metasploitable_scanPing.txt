@@ -1,7 +1,0 @@
-# Nmap 7.95 scan initiated Fri May 30 18:08:03 2025 as: /usr/lib/nmap/nmap --reason -sn -oN metasploitable_scanPing.txt 10.0.10.0/24
-Nmap scan report for 10.0.10.2
-Host is up, received arp-response (0.0011s latency).
-MAC Address: 08:00:27:32:E4:1F (PCS Systemtechnik/Oracle VirtualBox virtual NIC)
-Nmap scan report for 10.0.10.1
-Host is up, received localhost-response.
-# Nmap done at Fri May 30 18:08:31 2025 -- 256 IP addresses (2 hosts up) scanned in 27.98 seconds
