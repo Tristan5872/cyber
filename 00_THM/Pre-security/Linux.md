@@ -46,3 +46,38 @@
 | `/var`    | store data that is frequently accessed or written by services or applications (`tmp`,`log`,databases, ...) |
 | `/root`   | home directory of the root user                                                                            |
 | `/tmp`    | store tempory files and once the computer is restarted, the contents of this folder are deleted            |
+
+# schedulded command
+To defined commands to be used at a certain time of the day, week, month, etc, you can use the `cron` process which is all running thanks to the `crontabs` (one of the process executed during boot to manage cron jobs).</br>
+
+To defined a process to run at a certain time, you need to edit the `crontab` (special file with formating recognised by the cron process to execute each line one by one)</br>
+*To edit the `crontab`, use `crontab -e`*
+
+
+| Field | Description                          |
+|-------|--------------------------------------|
+| MIN   | What minute to execute at            |
+| HOUR  | What hour to execute at              |
+| DOM   | What day of the month to execute at  |
+| MON   | What month of the year to execute at |
+| DOW   | What day of the week to execute at   |
+
+</br>
+
+**Syntax for a scheduled process in a crontab :** 
+```bash
+MIN HOUR DOM MON DOW <command>
+```
+*If you don't want to give any value for a field, just use \**
+
+
+# Package management
+To add a repository if it is not on your OS default repository. We can use `add-apt-repository`.</br>
+
+**To fully install a third party software manually :**
+1. Download the GPG keys ==> keys that will ensure you have the right version by doing a safety check (they are given by developers)
+2. Create a file in /etc/apt/sources.list.d/ 
+3. Enter the repository information in this file by using a text editor
+4. Update this added entry with `apt update` for apt to recognise this new entry
+5. Intall the software using `apt install`
+
