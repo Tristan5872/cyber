@@ -60,3 +60,26 @@ Remove-Item file.txt -Stream hidden     # delete ADS
   - Standard user can change their file/folders
 - User/group manager : `lusrmgr.msc`
 - users can be assigned to multiple groups
+
+# System configuration
+
+- CTRl+R
+- enter `msconfig`
+==> Open the system configuration
+
+- Services : apps that run in the background
+| tab      | description                                              |
+|----------|----------------------------------------------------------|
+| general  | select devices/services for windows to load upon to boot |
+| boot     | define boot options                                      |
+| services | list all services                                        |
+| startup  | manage startup apps (better to do it in task manager)    |
+| tools    | show various tools to configure the OS                   |
+
+# Computer management
+
+- CTRl+R
+- enter `compmgmt`
+==> Open the computer management
+
+- Windows Management Instrumentation (WMI) : service to automate administrative task on remote computers
