@@ -76,10 +76,51 @@ Remove-Item file.txt -Stream hidden     # delete ADS
 | startup  | manage startup apps (better to do it in task manager)    |
 | tools    | show various tools to configure the OS                   |
 
-# Computer management
+## Computer management
 
 - CTRl+R
 - enter `compmgmt`
-==> Open the computer management
+==> Open the computer management : have tools to manage the OS
 
 - Windows Management Instrumentation (WMI) : service to automate administrative task on remote computers
+
+## System information
+
+- CTRl+R
+- enter `msinfo32`
+==> Open the System information : can give informations on the OS
+
+## Ressource Monitor
+
+- CTRl+R
+- enter `resmon`
+==> Open the ressource Monitor : show the usage of ressources on the PC
+
+| name     | description                                               |
+|----------|-----------------------------------------------------------|
+| overview | General overview of the CPU usage for every services/apps |
+| CPU      | CPU usage for every processes                             |
+| Memory   | Memory usage for every processes                          |
+| Disk     | Disk activity for every processes                         |
+| Network  | Network                                                   |
+
+## cmd
+
+- CTRl+R
+- enter `cmd`
+==> Open the command prompt
+
+| name     | description                                                         | syntax                 | parameters (most important)                                |
+|----------|---------------------------------------------------------------------|------------------------|------------------------------------------------------------|
+| cls      | clear the active terminal                                           | cls                    |                                                            |
+| ipconfig | give Network information about the device                           | ipconfig [/parameters] | /all give detailled infos                                  |
+| netstat  | Displays protocol statistics and current TCP/IP network connections | netstat [-parameters]  | -a all ; -s infos per protocols ; -r display routing table |
+| net      | gives command about the OS                                          | net [parameters]       | accounts ; user ; group ; config                           |
+
+## Registry Editor
+
+- CTRl+R
+- enter `regedit`
+==> Open the registry editor
+
+contain various databases about the OS that are required for it to run
