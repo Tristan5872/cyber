@@ -53,7 +53,7 @@ to share files in a domain, use the `SYSVOL` folder on the DC<br>
 
 ## NTLM (Windows New Technology LAN Manager)
 
-![NTLM authentication](ressources/ntlm.png)
+![NTLM authentication](ressources/NTLM.png)
 
 # Concept of trust relationship
 
