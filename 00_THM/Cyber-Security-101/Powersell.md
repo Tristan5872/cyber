@@ -21,4 +21,3 @@ They, in the majority can have **-Name** as an argument to search for a Name, wi
 - Invoke-Command
 - Get-Service
 - Get-FileHash
-- 
