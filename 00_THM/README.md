@@ -7,5 +7,5 @@ Each folder contains notes, exercises, and resources related to that specific pa
 
 ## Organisation
 
-- [Pre-Security](Pre-security/)
+- [Pre-security](Pre-security/)
 - [Cyber-Security-101](Cyber-Security-101/)
