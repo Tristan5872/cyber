@@ -1,4 +1,4 @@
-# 📁 Dossier : Reconnaissance Réseau – Guides & Pratiques
+# Dossier : Reconnaissance Réseau – Guides & Pratiques
 
 Bienvenue dans ce dossier consacré à la **reconnaissance réseau**, l'une des premières phases essentielles dans les tests d'intrusion, l'audit de sécurité et les projets en cybersécurité.
 
@@ -6,7 +6,7 @@ Ce répertoire contient des **fiches pratiques, tutoriels et supports** pour com
 
 ---
 
-## 📚 Objectif du dossier
+## Objectif du dossier
 
 Ce cours est destiné à :
 - Apprendre à utiliser les outils de **reconnaissance réseau**.
@@ -14,7 +14,7 @@ Ce cours est destiné à :
 
 ---
 
-## 🧰 Outils abordés
+## Outils abordés
 
 | Outil        | Description rapide |
 |--------------|--------------------|

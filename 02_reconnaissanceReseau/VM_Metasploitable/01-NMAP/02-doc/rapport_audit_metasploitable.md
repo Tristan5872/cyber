@@ -1,4 +1,4 @@
-# 🧾 Rapport d'audit – Analyse du réseau et des services exposés
+# Rapport d'audit – Analyse du réseau et des services exposés
 
 **Date du scan :** 30 mai 2025  
 **Outils utilisés :** Nmap 7.95  
@@ -6,7 +6,7 @@
 
 ---
 
-## 1. 🌐 Découverte réseau
+## 1. Découverte réseau
 
 ### Commande exécutée :
 ```bash
@@ -27,7 +27,7 @@ nmap --reason -sn -oN metasploitable_scanPing.txt 10.0.10.0/24
 
 ---
 
-## 2. 🔍 Découverte des ports ouverts – Metasploitable 2 (10.0.10.2)
+## 2. Découverte des ports ouverts – Metasploitable 2 (10.0.10.2)
 
 ### Commande exécutée :
 ```bash
@@ -43,7 +43,7 @@ nmap --reason -v -sS -p- -T3 -oN metasploitable_scanPortsOuverts.txt 10.0.10.2
 
 ---
 
-## 3. 🔍 Scan des services et de l'OS
+## 3. Scan des services et de l'OS
 
 ```bash
 sudo nmap -p$(cat ports.txt) -sV -O 10.0.10.2 -oN metasploitable_scanServiceOS.txt
@@ -59,7 +59,7 @@ sudo nmap -p$(cat ports.txt) -sV -O 10.0.10.2 -oN metasploitable_scanServiceOS.t
 
 ---
 
-## 4. 🔥 Analyse de vulnérabilités
+## 4. Analyse de vulnérabilités
 
 ```bash
 sudo nmap -vv -sV -p$(cat ports.txt) --script vuln --script-timeout 30s 10.0.10.2 -oN metaploitable_scanVuln.txt
