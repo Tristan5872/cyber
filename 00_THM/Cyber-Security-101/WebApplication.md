@@ -27,3 +27,17 @@ The Referrer-Policy header controls how much referrer information is sent with r
 - **same-origin**: This value indicates that the browser should only send referrer information when the destination is part of the same origin.
 - **strict-origin**: This value indicates that the browser should only send referrer information when the protocol stays the same (e.g., HTTPS to HTTPS).
 - **strict-origin-when-cross-origin**: This is similar to strict-origin except for same-origin requests, where it sends the full URL path in the origin header.
+
+# JavaScript
+
+## Minification
+Minification is the process of removing unnecessary characters from code without changing its functionality.
+==> It helps reduce the size of the code, which can improve load times and performance.
+
+## Obfuscation
+Obfuscation is the process of making code difficult to read and understand.
+Online tool : https://codebeautify.org/javascript-obfuscator
+
+## Deobfuscation
+Deobfuscation is the process of reversing obfuscation to make code readable again.
+Online tool : https://obf-io.deobfuscate.io/
