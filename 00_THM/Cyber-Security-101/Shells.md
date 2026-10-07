@@ -98,6 +98,24 @@ http://target.com/shell.php?cmd=ls
 
 Tools to generate web shells:
 - `p0wny shell` : a simple PHP web shell generator
-- `b374k shell` : a more advanced PHP web shell generator with additional features
-- `c99 shell` : a popular PHP web shell with a user-friendly interface and various functionalities
+- `pentestmonkey` : a web shell generator that supports multiple languages (PHP, ASP, JSP, etc.)
 
+
+## Command Injection
+Command injection is a vulnerability that allows an attacker to execute arbitrary commands on the target system.
+
+For example, if a web application takes user input, the attacker can inject malicious commands by simply using special characters like `;`, `&&`, or `|` to chain commands together.
+
+```
+# inside a text input field
+hi ; <ATTACKER_PAYLOAD> ;
+```
+
+# Unrestricted File Upload
+Unrestricted file upload is a vulnerability that allows an attacker to upload arbitrary files to the target system. This can lead to remote code execution if the uploaded file is a web shell or a malicious script
+
+After uploading the file, simply access it via the web server to execute the payload.
+```
+# accessing the uploaded file
+http://target.com/uploads/malicious.php
+```
